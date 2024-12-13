@@ -27,6 +27,7 @@ $requests = $pdo->query("SELECT * FROM demande_inscription")->fetchAll(PDO::FETC
                         <th>Sexe</th>
                         <th>Âge</th>
                         <th>Durée (mois)</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,11 +38,27 @@ $requests = $pdo->query("SELECT * FROM demande_inscription")->fetchAll(PDO::FETC
                             <td><?= htmlspecialchars($request['sexe']) ?></td>
                             <td><?= htmlspecialchars($request['age']) ?></td>
                             <td><?= htmlspecialchars($request['duree']) ?></td>
+                            <td>
+                                <button class="action-btn" data-id="<?= $request['id'] ?>" data-action="accept">Accepter</button>
+                                <button class="action-btn" data-id="<?= $request['id'] ?>" data-action="reject">Refuser</button>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
         <?php endif; ?>
     </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.action-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const id = this.dataset.id;
+                    const action = this.dataset.action;
+                    if (action === 'reject' && !confirm('Voulez-vous vraiment refuser cette demande ?')) return;
+                    window.location.href = `btn_gerer_requete.php?action=${action}&id=${id}`;
+                });
+            });
+        });
+    </script>
 </body>
 </html>
