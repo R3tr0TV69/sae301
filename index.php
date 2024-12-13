@@ -13,7 +13,7 @@
 <body>
     <!-- Header de la page -->
     <header>
-        <a href="index.html"><img src="images/usv.jpeg" alt="Logo USV" width="120px" height="120px"></a>
+        <a href="index.html"><img src="images/usv.png" alt="Logo USV" width="120px" height="120px"></a>
         <ul>
             <li><a href="#statistiques">Stats</a></li>
             <li><a href="#a-propos">À propos</a></li>
@@ -21,7 +21,7 @@
             <li><a href="#inscription">Inscription</a></li>
             <li><a href="#avis">Avis</a></li>
         </ul>
-        <a href="login.php"><img src="images/icon.jpg" alt="Se connecter" width="120px" height="120px"></a>
+        <a href="login.php"><img src="images/icon.png" alt="Se connecter" width="120px" height="120px"></a>
     </header>
     <!-- Contenu de la page -->
     <main>
