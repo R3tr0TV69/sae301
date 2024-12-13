@@ -8,18 +8,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- Feuille de style CSS perso -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <!-- Header de la page -->
     <header>
         <a href="index.html"><img src="images/usv.jpeg" alt="Logo USV" width="120px" height="120px"></a>
         <ul>
-            <li><a href="">Stats</a></li>
-            <li><a href="">À propos</a></li>
-            <li><a href="">Évènements</a></li>
-            <li><a href="">Inscription</a></li>
-            <li><a href="">Avis</a></li>
+            <li><a href="#statistiques">Stats</a></li>
+            <li><a href="#a-propos">À propos</a></li>
+            <li><a href="#evenements">Évènements</a></li>
+            <li><a href="#inscription">Inscription</a></li>
+            <li><a href="#avis">Avis</a></li>
         </ul>
         <a href="login.php"><img src="images/icon.jpg" alt="Se connecter" width="120px" height="120px"></a>
     </header>
@@ -31,14 +31,14 @@
             <h3>Union Sportive du Velay</h3>
             <Button>INSCRIS-TOI !</Button>
         </section>
-        <div>
+        <div id="statistiques">
             <div>
                 <img src="images/book_icon.jpg" alt="Icon nombre d'inscrits" width="80px" height="auto">
                 <h3>Nombre d'inscrits</h3>
             </div>
             <p>183</p>
         </div>
-        <section>
+        <section id="a-propos">
             <H2>À propos</H2>
             <img src="images/loic/interieur_bois.jpg" alt="Intérieur de la salle de sport" width="500" height="auto">
             <p>
@@ -50,7 +50,7 @@
                 Rejoignez la communauté USV et découvrez un cadre chaleureux où dépassement de soi et convivialité vont de pair !
             </p>
         </section>
-        <section>
+        <section id="evenements">
             <H2>Évènements</H2>
             <div id="carouselExampleCaptions" class="carousel slide">
                 <div class="carousel-indicators">
@@ -85,7 +85,7 @@
             </div>
             
         </section>
-        <section>
+        <section id="inscription">
             <h2>Inscris-toi !</h2>
             Nom : <input type="text" placeholder="Nom" name="surname">
             Prénom : <input type="text" placeholder="Prénom" name="name">
@@ -102,14 +102,14 @@
             <br>
             <button>Inscription</button>
         </section>
-        <section>
+        <section id="avis">
             <h2>Avis</h2>
             AVIS GOOGLE ?
         </section>
     </main>
     <!-- Footer de la page -->
     <footer>
-        <a href="https://www.facebook.com/unionsportiveduvelay/?locale=fr_FR"><img src="images/Icône Facebook.jpg" alt="Page Facebook" width="100px" height="auto"></a>
+        <a href="https://www.facebook.com/unionsportiveduvelay/?locale=fr_FR"><img src="images/Icone_Facebook.jpg" alt="Page Facebook" width="100px" height="auto"></a>
         <ul>
             <li>Navigation</li>
             <li>Statistiques</li>
