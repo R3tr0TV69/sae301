@@ -10,6 +10,7 @@ $id = intval($_GET['id']);
 $stmt = $pdo->prepare("SELECT * FROM adherents WHERE id = :id");
 $stmt->execute(['id' => $id]);
 $member = $stmt->fetch(PDO::FETCH_ASSOC);
+
 if (!$member) {
     die('Adhérent introuvable.');
 }
@@ -41,6 +42,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute(['id' => $id]);
         echo "<script>alert('Adhérent supprimé avec succès.'); window.location.href = 'admin_adherent.php';</script>";
         exit();
+    } elseif (isset($_POST['extend'])) {
+        $extension = intval($_POST['extension']);
+        $stmt = $pdo->prepare("UPDATE adherents SET date_expiration = DATE_ADD(date_expiration, INTERVAL :extension MONTH) WHERE id = :id");
+        $stmt->execute([
+            'extension' => $extension,
+            'id' => $id
+        ]);
+        echo "<script>alert('Durée prolongée avec succès.');</script>";
     }
 }
 ?>
@@ -86,6 +95,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <form method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cet adhérent ?');">
         <button type="submit" name="delete">Supprimer l'adhérent</button>
+    </form>
+
+    <form method="POST">
+        <label for="extension">Prolonger la durée :</label>
+        <select name="extension" id="extension" required>
+            <option value="1">1 mois</option>
+            <option value="3">3 mois</option>
+            <option value="6">6 mois</option>
+            <option value="12">12 mois</option>
+        </select>
+        <button type="submit" name="extend">Prolonger</button>
     </form>
 
     <a href="admin_adherent.php">Retour à la liste des adhérents</a>
