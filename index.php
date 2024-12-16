@@ -114,7 +114,62 @@
         </section>
         <section id="avis">
             <h2>Avis</h2>
-            AVIS GOOGLE ?
+            <div class="google-note-container">
+                <!-- Icône Google -->
+                <img src="images/google_icon.svg" alt="google icone">
+        
+                <!-- Note -->
+                <span class="google-note">4,6</span>
+        
+                <!-- Étoile pleine -->
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#1C274C" d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22l1.18-7.86-5-4.87 6.91-1.01L12 2z"/>
+                </svg>
+            </div>
+            <div class="flex-row">
+                <div class="avis-item">
+                    <div class="avis-container">
+                        <p class="avis-pseudo">Enzo Teyssonneyre</p>
+                        <p class="avis-commentaire">Très bonne salle de sport, très bon sauna, ambiance familiale, musique possible dans la salle, multitude de machines.</p>
+                        <div class="avis-stars">
+                            <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="avis-item">
+                    <div class="avis-container">
+                        <p class="avis-pseudo">Maximilien Jobert-Beraud</p>
+                        <p class="avis-commentaire">Cela fait presque 5 mois que vais à l'USV et je trouve cette salle de sport super, très bonne ambiance et il y a tout le matériel nécessaire et toujours en bon état.</p>
+                        <div class="avis-stars">
+                            <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="avis-item">
+                    <div class="avis-container">
+                        <p class="avis-pseudo">Christophe Martinat</p>
+                        <p class="avis-commentaire">Salle super bien équipée, amplitude d’ouverture au max, ambiance chaleureuse et conviviale.</p>
+                        <div class="avis-stars">
+                            <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path fill="#D9D9D9" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <!-- Footer de la page -->
