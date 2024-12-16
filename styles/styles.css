@@ -10,7 +10,8 @@ header {
     align-items: center;
     z-index: 1;
     pointer-events: none;
-    background-color: #233D7A;
+    background-color: #fe0000;
+    /* background-color: #233D7A; */
 }
 
 header ul {
