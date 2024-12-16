@@ -229,11 +229,27 @@ p{
     gap: 15px;
     margin: 50px auto;
     padding: 40px;
-    width: 75%;
-    background-color: #F7FBFD; /* Fond léger */
+    width: 80%;
+    background-color: #F7FBFD;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-size: 24px;
+}
+
+.ligne-formulaire {
+    display: flex;
+    width: 100%;
+}
+
+.element-formulaire {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 15px;
+}
+
+.element-formulaire-seul {
+    width: 50%;
 }
 
 #inscription input, 
@@ -246,24 +262,3 @@ p{
     outline: none;
     transition: all 0.3s ease;
 }
-
-/* Style des libellés */
-#inscription label {
-    font-weight: 500;
-    color: #B3B3B3;
-}
-.label-flex{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-}
-.label-flex1{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-/* #inscription input, 
-#inscription select {
-    width: 100%;
-} */
