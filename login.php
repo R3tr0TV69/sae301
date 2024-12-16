@@ -1,13 +1,6 @@
 <?php
 require_once 'config/config.php';
 
-try {
-    
-    $bdd = new PDO('mysql:host=' . $hote . ';port=' . $port . ';dbname=' . $nom_bd, $identifiant, $mot_de_passe, $options);
-} catch (PDOException $e) {
-    die('Erreur : ' . $e->getMessage());
-}
-
 
 $requete = 'SELECT identifiant, mot_de_passe FROM comptes_admin';
 $resultat = $bdd->query($requete);
