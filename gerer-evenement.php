@@ -12,25 +12,32 @@
         die('Évènement introuvable');
     }
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $nom_evenement = $_POST['nom_evenement'];
-        $description = $_POST['description'];
-        $date_evenement = $_POST['date_evenement'];
-        $heure_evenement = $_POST['heure_evenement'];
-        $lieu = $_POST['lieu'];
-        $capacite = intval($_POST['capacite']);
+        if (isset($_POST['update'])) {
+            $nom_evenement = $_POST['nom_evenement'];
+            $description = $_POST['description'];
+            $date_evenement = $_POST['date_evenement'];
+            $heure_evenement = $_POST['heure_evenement'];
+            $lieu = $_POST['lieu'];
+            $capacite = intval($_POST['capacite']);
     
-        
-        $stmt = $pdo->prepare("UPDATE evenements SET nom_evenement = :nom_evenement, description = :description, date_evenement = :date_evenement, heure_evenement = :heure_evenement, lieu = :lieu, capacite = :capacite WHERE id = :id");
-        $stmt->execute([
-            'nom_evenement' => $nom_evenement,
-            'description' => $description,
-            'date_evenement' => $date_evenement,
-            'heure_evenement' => $heure_evenement,
-            'lieu' => $lieu,
-            'capacite' => $capacite,
-            'id' => $id
-        ]);
-        echo "<script>alert('Évènement mis à jour avec succès.');</script>";
+            
+            $stmt = $pdo->prepare("UPDATE evenements SET nom_evenement = :nom_evenement, description = :description, date_evenement = :date_evenement, heure_evenement = :heure_evenement, lieu = :lieu, capacite = :capacite WHERE id = :id");
+            $stmt->execute([
+                'nom_evenement' => $nom_evenement,
+                'description' => $description,
+                'date_evenement' => $date_evenement,
+                'heure_evenement' => $heure_evenement,
+                'lieu' => $lieu,
+                'capacite' => $capacite,
+                'id' => $id
+            ]);
+            echo "<script>alert('Événement mis à jour avec succès.');</script>";
+        } elseif (isset($_POST['delete'])) {
+            $stmt = $pdo->prepare("DELETE FROM evenements WHERE id = :id");
+            $stmt->execute(['id' => $id]);
+            echo "<script>alert('Événement supprimé avec succès.'); window.location.href = 'admin_evenement.php';</script>";
+            exit();
+        }
     }
 ?>
 
@@ -64,7 +71,11 @@
         <label for="capacite">Capacité :</label>
         <input type="number" name="capacite" id="capacite" value="<?= htmlspecialchars($event['capacite']) ?>"><br>
 
-        <button type="submit">Mettre à jour</button>
+        <button type="submit" name="update">Mettre à jour</button>
+    </form>
+
+    <form method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cet événement ?');">
+        <button type="submit" name="delete">Supprimer l'Événement</button>
     </form>
     
     <a href="admin_evenement.php">Retour à la liste des événements</a>
