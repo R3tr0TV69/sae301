@@ -91,18 +91,24 @@
         </section>
         <section id="inscription">
             <h2>Inscris-toi !</h2>
-            Nom : <input type="text" placeholder="Nom" name="surname">
-            Prénom : <input type="text" placeholder="Prénom" name="name">
-            Sexe : <input type="text" placeholder="Sexe" name="sexe">
-            Âge : <input type="text" placeholder="Âge" name="age">
-            Poids : <input type="text" placeholder="Poids" name="poids">
-            Taille : <input type="text" placeholder="Taille" name="taille">
-            Durée : <select name="duree" id="duree">
-                <option value="1">1 mois</option>
-                <option value="3">3 mois</option>
-                <option value="6">6 mois</option>
-                <option value="12">12 mois</option>
-            </select>
+                <div class="label-flex1">
+                    <div class="">Nom : <input type="text" placeholder="Nom" name="surname"></div>
+                    <div class="">Prénom : <input type="text" placeholder="Prénom" name="name"></div>
+                </div>
+                <div class="label-flex1">
+                    <div class="">Sexe : <input type="text" placeholder="Sexe" name="sexe"></div>
+                    <div class="">Âge : <input type="text" placeholder="Âge" name="age"></div>
+                </div>
+                <div class="label-flex1">
+                    <div class="">Poids : <input type="text" placeholder="Poids" name="poids"></div>
+                    <div class="">Taille : <input type="text" placeholder="Taille" name="taille"></div>
+                </div>
+                    <div class="">Durée : <select name="duree" id="duree">
+                        <option value="1">1 mois</option>
+                        <option value="3">3 mois</option>
+                        <option value="6">6 mois</option>
+                        <option value="12">12 mois</option>
+                    </select></div>
             <br>
             <button>Inscription</button>
         </section>
