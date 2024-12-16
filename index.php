@@ -13,7 +13,7 @@
 <body>
     <!-- Header de la page -->
     <header>
-        <a href="index.html"><img src="images/usv.png" alt="Logo USV" width="120px" height="120px"></a>
+        <a href="index.html"><img src="images/logo_remake.svg" alt="Logo USV" width="300px"></a>
         <ul>
             <li><a href="#statistiques">Stats</a></li>
             <li><a href="#a-propos">À propos</a></li>
