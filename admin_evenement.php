@@ -69,6 +69,7 @@
                     <th>Heure</th>
                     <th>Lieu</th>
                     <th>Capacité</th>
+                    <th>Gérer</th>
                 </tr>
             </thead>
             <tbody>
@@ -80,6 +81,7 @@
                     <td><?= htmlspecialchars($event['heure_evenement']) ?></td>
                     <td><?= htmlspecialchars($event['lieu']) ?></td>
                     <td><?= htmlspecialchars($event['capacite']) ?></td>
+                    <td><a href="gerer_evenement.php?id=<?= $event['id'] ?>">Gérer</a></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
