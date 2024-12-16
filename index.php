@@ -13,7 +13,7 @@
 <body>
     <!-- Header de la page -->
     <header>
-        <a href="index.html"><img src="images/logo_remake.svg" alt="Logo USV" width="300px"></a>
+        <a href="index.html"><img src="images/logo_remake.svg" alt="Logo USV" width="200px"></a>
         <ul>
             <li><a href="#statistiques">Stats</a></li>
             <li><a href="#a-propos">À propos</a></li>
@@ -25,11 +25,13 @@
     </header>
     <!-- Contenu de la page -->
     <main>
-        <section>
-            <img src="images/loic/velos.jpg" alt="Salle de vélos" width="500" height="auto">
-            <h1>USV</h1>
-            <h3>Union Sportive du Velay</h3>
-            <Button>INSCRIS-TOI !</Button>
+        <section id="haut-de-page">
+            <div id="txt-h-d-p">
+                <h1>USV</h1>
+                <h3>Union Sportive du Velay</h3>
+                <Button>INSCRIS-TOI !</Button>
+            </div>
+            <img src="images/loic/velos.jpg" alt="Salle de vélos">
         </section>
         <div id="statistiques">
             <div>
@@ -39,16 +41,18 @@
             <p>183</p>
         </div>
         <section id="a-propos">
-            <H2>À propos</H2>
-            <img src="images/loic/interieur_bois.jpg" alt="Intérieur de la salle de sport" width="500" height="auto">
-            <p>
-                Bienvenue à l’Union Sportive du Velay (USV), votre salle de sport située au cœur du Puy-en-Velay ! 
-                Plus qu’un simple espace d’entraînement, l’USV est un lieu dédié à la santé, au bien-être et à la performance, 
-                où chacun peut trouver sa place, quels que soient son niveau ou ses objectifs. 
-                Nous proposons un large éventail d’équipements modernes, des cours collectifs animés par des coachs passionnés, ainsi qu’un accompagnement personnalisé pour vous aider à donner le meilleur de vous-même. 
-                Que vous soyez à la recherche de performance, de remise en forme ou simplement d’un moment pour vous, notre équipe est là pour vous guider. 
-                Rejoignez la communauté USV et découvrez un cadre chaleureux où dépassement de soi et convivialité vont de pair !
-            </p>
+            <img src="images/loic/interieur_bois.jpg" alt="Intérieur de la salle de sport">
+            <div>
+                <H2>À propos</H2>
+                <p>
+                    Bienvenue à l’Union Sportive du Velay (USV), votre salle de sport située au cœur du Puy-en-Velay ! 
+                    Plus qu’un simple espace d’entraînement, l’USV est un lieu dédié à la santé, au bien-être et à la performance, 
+                    où chacun peut trouver sa place, quels que soient son niveau ou ses objectifs. 
+                    Nous proposons un large éventail d’équipements modernes, des cours collectifs animés par des coachs passionnés, ainsi qu’un accompagnement personnalisé pour vous aider à donner le meilleur de vous-même. 
+                    Que vous soyez à la recherche de performance, de remise en forme ou simplement d’un moment pour vous, notre équipe est là pour vous guider. 
+                    Rejoignez la communauté USV et découvrez un cadre chaleureux où dépassement de soi et convivialité vont de pair !
+                </p>
+            </div>
         </section>
         <section id="evenements">
             <H2>Évènements</H2>
