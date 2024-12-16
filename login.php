@@ -1,12 +1,11 @@
 <?php
-require_once 'config/config.php'; // Inclure la configuration pour utiliser $pdo
+require_once 'config/config.php';
 
-$message = ''; // Initialisation du message d'erreur
+$message = '';
 
 try {
-    // Requête pour récupérer les identifiants admin
     $requete = 'SELECT identifiant, mot_de_passe FROM comptes_admin';
-    $resultat = $pdo->query($requete); // Utilisation de la connexion $pdo définie dans config.php
+    $resultat = $pdo->query($requete);
     $data = $resultat->fetch(PDO::FETCH_ASSOC);
 
     if ($data) {
@@ -23,9 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $form_identifiant = $_POST['username'] ?? '';
     $form_mot_de_passe = $_POST['password'] ?? '';
 
-    // Vérification des identifiants fournis
-    if ($form_identifiant === $db_identifiant && $form_mot_de_passe === $db_mot_de_passe) {
-        header('Location: admin_adherent.php'); // Redirection en cas de succès
+    if ($form_identifiant === $db_identifiant && hash('sha256', $form_mot_de_passe) === $db_mot_de_passe) {
+        header('Location: admin_adherent.php');
         exit;
     } else {
         $message = 'Identifiant ou mot de passe incorrect';
