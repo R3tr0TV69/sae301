@@ -91,18 +91,24 @@
         </section>
         <section id="inscription">
             <h2>Inscris-toi !</h2>
-            Nom : <input type="text" placeholder="Nom" name="surname">
-            Prénom : <input type="text" placeholder="Prénom" name="name">
-            Sexe : <input type="text" placeholder="Sexe" name="sexe">
-            Âge : <input type="text" placeholder="Âge" name="age">
-            Poids : <input type="text" placeholder="Poids" name="poids">
-            Taille : <input type="text" placeholder="Taille" name="taille">
-            Durée : <select name="duree" id="duree">
-                <option value="1">1 mois</option>
-                <option value="3">3 mois</option>
-                <option value="6">6 mois</option>
-                <option value="12">12 mois</option>
-            </select>
+                <div class="ligne-formulaire">
+                    <div class="element-formulaire">Nom : <input type="text" placeholder="Nom" name="surname"></div>
+                    <div class="element-formulaire">Prénom : <input type="text" placeholder="Prénom" name="name"></div>
+                </div>
+                <div class="ligne-formulaire">
+                    <div class="element-formulaire">Sexe : <input type="text" placeholder="Sexe" name="sexe"></div>
+                    <div class="element-formulaire">Âge : <input type="text" placeholder="Âge" name="age"></div>
+                </div>
+                <div class="ligne-formulaire">
+                    <div class="element-formulaire">Poids : <input type="text" placeholder="Poids" name="poids"></div>
+                    <div class="element-formulaire">Taille : <input type="text" placeholder="Taille" name="taille"></div>
+                </div>
+                    <div class="element-formulaire-seul">Durée : <select name="duree" id="duree">
+                        <option value="1">1 mois</option>
+                        <option value="3">3 mois</option>
+                        <option value="6">6 mois</option>
+                        <option value="12">12 mois</option>
+                    </select></div>
             <br>
             <button>Inscription</button>
         </section>

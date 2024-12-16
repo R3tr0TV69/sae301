@@ -14,7 +14,7 @@ header {
     display: flex;
     justify-content:space-between;
     align-items: center;
-    z-index: 1;
+    z-index: 100;
     pointer-events: none;
     padding-right: 20px;
     padding-left: 20px;
@@ -146,10 +146,119 @@ main section h3 {
     border-bottom-right-radius: 180px; 
 }
 h2{
-    font-size: 128px;
+    /* font-size: 6rem; */
+    font-size: 7vw;
     font-weight: 600;
     color: black;
 }
 p{
     font-size: 24px;
+    /* font-size: 1.25vw; */
+}
+#evenements {
+    text-align: center;
+    padding: 20px;
+}
+
+.carousel-inner {
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-inner img {
+    object-fit: cover; /* Coupe et ajuste les images */
+    height: 100%; /* Prend toute la hauteur disponible */
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent pour le texte */
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    text-align: left; /* Alignement du texte */
+    bottom: 30px;
+    left: 10%;
+    width: 80%;
+    transform: translateY(-300px);
+}
+
+.carousel-caption h5 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Boutons de navigation */
+.carousel-control-prev,
+.carousel-control-next {
+    filter: invert(100%); /* Rend les boutons blancs */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 50px;
+    height: 50px;
+}
+
+/* Indicateurs du carrousel */
+.carousel-indicators [data-bs-target] {
+    background-color: #333; /* Points d'indication plus sombres */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.carousel-indicators .active {
+    background-color: #000; /* Point actif en noir */
+}
+
+
+/* Formulaire */
+#inscription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 50px auto;
+    padding: 40px;
+    width: 80%;
+    background-color: #F7FBFD;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+}
+
+.ligne-formulaire {
+    display: flex;
+    width: 100%;
+}
+
+.element-formulaire {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 15px;
+}
+
+.element-formulaire-seul {
+    width: 50%;
+}
+
+#inscription input, 
+#inscription select {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: 2px solid #D9D9D9;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
 }
