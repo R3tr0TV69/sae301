@@ -3,6 +3,7 @@ require_once 'config/config.php';
 require_once 'config/verifier_session.php';
 $stmt = $pdo->query("SELECT * FROM gestion_site LIMIT 1");
 $site = $stmt->fetch(PDO::FETCH_ASSOC);
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nom = $_POST['nom'];
     $horaires = $_POST['horaires'];
@@ -16,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $logoPath = $uploadDir . basename($_FILES['logo']['name']);
 
         if (!move_uploaded_file($_FILES['logo']['tmp_name'], $logoPath)) {
-            die('Erreur lors du téléchargement du fichier');
+            die('Erreur lors du téléchargement du fichier.');
         }
     }
 
@@ -27,9 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'logo' => $logoPath,
         'id' => $site['id']
     ]);
-    echo "<script>alert('Informations mises à jour avec succès');</script>";
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -51,12 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="logo">Logo :</label>
         <input type="file" name="logo" id="logo"><br>
         <?php if (!empty($site['logo'])): ?>
-            <img src="<?= htmlspecialchars($site['logo']) ?>"><br>
+            <img src="<?= htmlspecialchars($site['logo']) ?>" alt="Logo actuel" style="max-width: 200px;"><br>
         <?php endif; ?>
 
         <button type="submit">Mettre à jour</button>
     </form>
 </body>
 </html>
-
 
