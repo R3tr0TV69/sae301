@@ -1,6 +1,7 @@
 <?php
 require_once 'config/config.php';
 require_once 'config/verifier_session.php';
+require_once 'poo/classesIMC.php';
 
 if (!isset($_GET['id'])) {
     die("ID de l'adhérent manquant");
@@ -18,23 +19,20 @@ if (!$member) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['update'])) {
-        $nom = $_POST['nom'];
-        $prenom = $_POST['prenom'];
-        $sexe = $_POST['sexe'];
-        $age = intval($_POST['age']);
-        $poids = floatval($_POST['poids']);
-        $taille = floatval($_POST['taille']);
-        $date_expiration = $_POST['date_expiration'];
-
-        $stmt = $pdo->prepare("UPDATE adherents SET nom = :nom, prenom = :prenom, sexe = :sexe, age = :age, poids = :poids, taille = :taille, date_expiration = :date_expiration WHERE id = :id");
+        $stmt = $pdo->prepare("
+            UPDATE adherents SET 
+            nom = :nom, prenom = :prenom, sexe = :sexe, age = :age, 
+            poids = :poids, taille = :taille, date_expiration = :date_expiration 
+            WHERE id = :id
+        ");
         $stmt->execute([
-            'nom' => $nom,
-            'prenom' => $prenom,
-            'sexe' => $sexe,
-            'age' => $age,
-            'poids' => $poids,
-            'taille' => $taille,
-            'date_expiration' => $date_expiration,
+            'nom' => $_POST['nom'],
+            'prenom' => $_POST['prenom'],
+            'sexe' => $_POST['sexe'],
+            'age' => intval($_POST['age']),
+            'poids' => floatval($_POST['poids']),
+            'taille' => floatval($_POST['taille']),
+            'date_expiration' => $_POST['date_expiration'],
             'id' => $id
         ]);
         echo "<script>alert('Informations mises à jour avec succès.');</script>";
@@ -45,7 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     } elseif (isset($_POST['extend'])) {
         $extension = intval($_POST['extension']);
-        $stmt = $pdo->prepare("UPDATE adherents SET date_expiration = DATE_ADD(date_expiration, INTERVAL :extension MONTH) WHERE id = :id");
+        $stmt = $pdo->prepare("
+            UPDATE adherents SET 
+            date_expiration = DATE_ADD(date_expiration, INTERVAL :extension MONTH) 
+            WHERE id = :id
+        ");
         $stmt->execute([
             'extension' => $extension,
             'id' => $id
@@ -60,11 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>Gérer l'Adhérent</title>
     <link rel="stylesheet" href="styles/styles-admin.css">
 </head>
 <body>
-    <?php include("includes/header_admin.php") ?>
+    <?php include("includes/header_admin.php"); ?>
     <main>
         <h1>Gérer l'Adhérent</h1>
 
@@ -111,7 +114,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button class="btnsupprimer" type="submit" name="delete">Supprimer l'adhérent</button>
         </form>
 
-        <a href="admin_adherent.php">Retour à la liste des adhérents</a>
+        <h2>IMC</h2>
+        <?php AdherentIMC::afficherIMC($pdo, $id); ?>
     </main>
 </body>
 </html>

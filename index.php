@@ -38,8 +38,9 @@ $evenements = $stmtEvenements->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'accueil</title>
+    <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="styles/styles.css">
+    <title>Page d'accueil</title>
 </head>
 <body>
     <!-- Header de la page -->
@@ -50,7 +51,7 @@ $evenements = $stmtEvenements->fetchAll(PDO::FETCH_ASSOC);
             <div id="txt-h-d-p">
                 <h1><?= htmlspecialchars($site['nom']) ?></h1>
                 <h3><strong>Horaires : </strong> <?= nl2br(htmlspecialchars($site['horaires'])) ?></h3>
-                <Button>INSCRIS-TOI !</Button>
+                <a href="#inscription"><Button href>INSCRIS-TOI !</Button></a>
             </div>
             <img src="images/loic/velos.jpg" alt="Salle de vélos">
         </section>
