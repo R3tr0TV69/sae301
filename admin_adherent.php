@@ -1,5 +1,6 @@
 <?php
 require_once 'config/config.php';
+require_once 'config/verifier_session.php';
 
 $requests = $pdo->query("SELECT * FROM demande_inscription")->fetchAll(PDO::FETCH_ASSOC);
 $members = $pdo->query("SELECT * FROM adherents")->fetchAll(PDO::FETCH_ASSOC);
@@ -11,7 +12,7 @@ $members = $pdo->query("SELECT * FROM adherents")->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Adhérents</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles-admin.css">
 </head>
 <body>
     <h1>Admin Adhérents</h1>

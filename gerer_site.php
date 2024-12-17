@@ -1,5 +1,6 @@
 <?php
 require_once 'config/config.php';
+require_once 'config/verifier_session.php';
 
 $stmt = $pdo->query("SELECT * FROM gestion_site LIMIT 1");
 $site = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -11,7 +12,7 @@ $site = $stmt->fetch(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gérer le Site</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles-admin.css">
 </head>
 <body>
     <h1>Informations du Site</h1>

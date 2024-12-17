@@ -1,5 +1,6 @@
 <?php
 require_once 'config/config.php';
+require_once 'config/verifier_session.php';
 
 if (!isset($_GET['id'])) {
     die("ID de l'adhérent manquant");
@@ -60,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gérer l'Adhérent</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles-admin.css">
 </head>
 <body>
     <h1>Gérer l'Adhérent</h1>
