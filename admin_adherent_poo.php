@@ -1,8 +1,8 @@
 <?php
 require_once 'config/config.php';
 require_once 'config/verifier_session.php';
+require_once 'poo/classesInscription.php';
 
-$requests = $pdo->query("SELECT * FROM demande_inscription")->fetchAll(PDO::FETCH_ASSOC);
 $members = $pdo->query("SELECT * FROM adherents")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -20,39 +20,7 @@ $members = $pdo->query("SELECT * FROM adherents")->fetchAll(PDO::FETCH_ASSOC);
         <h1>Admin Adhérents</h1>
         <section>
             <h2>Requêtes d'adhésion</h2>
-            <?php if (empty($requests)): ?>
-                <p>Aucune nouvelle requête d'adhésion pour le moment.</p>
-            <?php else: ?>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Nom</th>
-                                <th>Prénom</th>
-                                <th>Sexe</th>
-                                <th>Âge</th>
-                                <th>Durée (mois)</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($requests as $request): ?>
-                                <tr>
-                                    <td><?= htmlspecialchars($request['nom']) ?></td>
-                                    <td><?= htmlspecialchars($request['prenom']) ?></td>
-                                    <td><?= htmlspecialchars($request['sexe']) ?></td>
-                                    <td><?= htmlspecialchars($request['age']) ?></td>
-                                    <td><?= htmlspecialchars($request['duree']) ?></td>
-                                    <td>
-                                        <button class="action-btn" data-id="<?= $request['id'] ?>" data-action="accept">Accepter</button>
-                                        <button class="action-btn" data-id="<?= $request['id'] ?>" data-action="reject">Refuser</button>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
-            <?php endif; ?>
-                </div>
+            <?php afficherRequetes::displayRequests($requests); ?>
         </section>
 
         <section>
