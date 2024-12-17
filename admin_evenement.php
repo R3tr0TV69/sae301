@@ -33,61 +33,63 @@
 </head>
 <body>
     <?php include("includes/header_admin.php") ?>
-    <h1>Gérer les Événements</h1>
+    <main>
+        <h1>Gérer les Événements</h1>
 
-    <h2>Ajouter un Événement</h2>
-    <form method="POST">
-        <label>Nom :</label>
-        <input type="text" name="nom_evenement" required><br>
+        <h2>Ajouter un Événement</h2>
+        <form method="POST">
+            <label>Nom :</label>
+            <input type="text" name="nom_evenement" required><br>
 
-        <label>Description :</label>
-        <textarea name="description"></textarea><br>
+            <label>Description :</label>
+            <textarea name="description"></textarea><br>
 
-        <label>Date :</label>
-        <input type="date" name="date_evenement" required><br>
+            <label>Date :</label>
+            <input type="date" name="date_evenement" required><br>
 
-        <label>Heure :</label>
-        <input type="time" name="heure_evenement" required><br>
+            <label>Heure :</label>
+            <input type="time" name="heure_evenement" required><br>
 
-        <label>Lieu :</label>
-        <input type="text" name="lieu" required><br>
+            <label>Lieu :</label>
+            <input type="text" name="lieu" required><br>
 
-        <label>Capacité :</label>
-        <input type="number" name="capacite"><br>
+            <label>Capacité :</label>
+            <input type="number" name="capacite"><br>
 
-        <button type="submit">Ajouter</button>
-    </form>
+            <button type="submit">Ajouter</button>
+        </form>
 
-    <h2>Événements disponibles</h2>
-    <?php if (empty($events)): ?>
-        <p>Aucun événement disponible.</p>
-    <?php else: ?>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Description</th>
-                    <th>Date</th>
-                    <th>Heure</th>
-                    <th>Lieu</th>
-                    <th>Capacité</th>
-                    <th>Gérer</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($events as $event): ?>
-                <tr>
-                    <td><?= htmlspecialchars($event['nom_evenement']) ?></td>
-                    <td><?= htmlspecialchars($event['description']) ?></td>
-                    <td><?= htmlspecialchars($event['date_evenement']) ?></td>
-                    <td><?= htmlspecialchars($event['heure_evenement']) ?></td>
-                    <td><?= htmlspecialchars($event['lieu']) ?></td>
-                    <td><?= htmlspecialchars($event['capacite']) ?></td>
-                    <td><a href="gerer_evenement.php?id=<?= $event['id'] ?>">Gérer</a></td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    <?php endif; ?>
+        <h2>Événements disponibles</h2>
+        <?php if (empty($events)): ?>
+            <p>Aucun événement disponible.</p>
+        <?php else: ?>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Heure</th>
+                        <th>Lieu</th>
+                        <th>Capacité</th>
+                        <th>Gérer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($events as $event): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($event['nom_evenement']) ?></td>
+                        <td><?= htmlspecialchars($event['description']) ?></td>
+                        <td><?= htmlspecialchars($event['date_evenement']) ?></td>
+                        <td><?= htmlspecialchars($event['heure_evenement']) ?></td>
+                        <td><?= htmlspecialchars($event['lieu']) ?></td>
+                        <td><?= htmlspecialchars($event['capacite']) ?></td>
+                        <td><a href="gerer_evenement.php?id=<?= $event['id'] ?>">Gérer</a></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php endif; ?>
+    </main>
 </body>
 </html>

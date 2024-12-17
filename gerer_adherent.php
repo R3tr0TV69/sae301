@@ -65,51 +65,53 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <?php include("includes/header_admin.php") ?>
-    <h1>Gérer l'Adhérent</h1>
+    <main>
+        <h1>Gérer l'Adhérent</h1>
 
-    <form method="POST">
-        <label for="nom">Nom :</label>
-        <input type="text" name="nom" id="nom" value="<?= htmlspecialchars($member['nom']) ?>" required><br>
+        <form method="POST">
+            <label for="nom">Nom :</label>
+            <input type="text" name="nom" id="nom" value="<?= htmlspecialchars($member['nom']) ?>" required><br>
 
-        <label for="prenom">Prénom :</label>
-        <input type="text" name="prenom" id="prenom" value="<?= htmlspecialchars($member['prenom']) ?>" required><br>
+            <label for="prenom">Prénom :</label>
+            <input type="text" name="prenom" id="prenom" value="<?= htmlspecialchars($member['prenom']) ?>" required><br>
 
-        <label for="sexe">Sexe :</label>
-        <select name="sexe" id="sexe" required>
-            <option value="M" <?= $member['sexe'] === 'M' ? 'selected' : '' ?>>M</option>
-            <option value="F" <?= $member['sexe'] === 'F' ? 'selected' : '' ?>>F</option>
-        </select><br>
+            <label for="sexe">Sexe :</label>
+            <select name="sexe" id="sexe" required>
+                <option value="M" <?= $member['sexe'] === 'M' ? 'selected' : '' ?>>M</option>
+                <option value="F" <?= $member['sexe'] === 'F' ? 'selected' : '' ?>>F</option>
+            </select><br>
 
-        <label for="age">Âge :</label>
-        <input type="number" name="age" id="age" value="<?= htmlspecialchars($member['age']) ?>" required><br>
+            <label for="age">Âge :</label>
+            <input type="number" name="age" id="age" value="<?= htmlspecialchars($member['age']) ?>" required><br>
 
-        <label for="poids">Poids (kg) :</label>
-        <input type="number" step="0.1" name="poids" id="poids" value="<?= htmlspecialchars($member['poids']) ?>"><br>
+            <label for="poids">Poids (kg) :</label>
+            <input type="number" step="0.1" name="poids" id="poids" value="<?= htmlspecialchars($member['poids']) ?>"><br>
 
-        <label for="taille">Taille (cm) :</label>
-        <input type="number" step="0.1" name="taille" id="taille" value="<?= htmlspecialchars($member['taille']) ?>"><br>
+            <label for="taille">Taille (cm) :</label>
+            <input type="number" step="0.1" name="taille" id="taille" value="<?= htmlspecialchars($member['taille']) ?>"><br>
 
-        <label for="date_expiration">Date d'expiration :</label>
-        <input type="date" name="date_expiration" id="date_expiration" value="<?= htmlspecialchars($member['date_expiration']) ?>" required><br>
+            <label for="date_expiration">Date d'expiration :</label>
+            <input type="date" name="date_expiration" id="date_expiration" value="<?= htmlspecialchars($member['date_expiration']) ?>" required><br>
 
-        <button type="submit" name="update">Mettre à jour</button>
-    </form>
+            <button type="submit" name="update">Mettre à jour</button>
+        </form>
 
-    <form method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cet adhérent ?');">
-        <button type="submit" name="delete">Supprimer l'adhérent</button>
-    </form>
+        <form method="POST">
+            <label for="extension">Prolonger la durée :</label>
+            <select name="extension" id="extension" required>
+                <option value="1">1 mois</option>
+                <option value="3">3 mois</option>
+                <option value="6">6 mois</option>
+                <option value="12">12 mois</option>
+            </select>
+            <button type="submit" name="extend">Prolonger</button>
+        </form>
 
-    <form method="POST">
-        <label for="extension">Prolonger la durée :</label>
-        <select name="extension" id="extension" required>
-            <option value="1">1 mois</option>
-            <option value="3">3 mois</option>
-            <option value="6">6 mois</option>
-            <option value="12">12 mois</option>
-        </select>
-        <button type="submit" name="extend">Prolonger</button>
-    </form>
+        <form method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cet adhérent ?');">
+            <button class="btnsupprimer" type="submit" name="delete">Supprimer l'adhérent</button>
+        </form>
 
-    <a href="admin_adherent.php">Retour à la liste des adhérents</a>
+        <a href="admin_adherent.php">Retour à la liste des adhérents</a>
+    </main>
 </body>
 </html>

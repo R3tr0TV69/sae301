@@ -16,12 +16,45 @@ $members = $pdo->query("SELECT * FROM adherents")->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <?php include("includes/header_admin.php") ?>
-    <h1>Admin Adhérents</h1>
-    <section>
-        <h2>Requêtes d'adhésion</h2>
-        <?php if (empty($requests)): ?>
-            <p>Aucune nouvelle requête d'adhésion pour le moment.</p>
-        <?php else: ?>
+    <main>
+        <h1>Admin Adhérents</h1>
+        <section>
+            <h2>Requêtes d'adhésion</h2>
+            <?php if (empty($requests)): ?>
+                <p>Aucune nouvelle requête d'adhésion pour le moment.</p>
+            <?php else: ?>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Sexe</th>
+                            <th>Âge</th>
+                            <th>Durée (mois)</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($requests as $request): ?>
+                            <tr>
+                                <td><?= htmlspecialchars($request['nom']) ?></td>
+                                <td><?= htmlspecialchars($request['prenom']) ?></td>
+                                <td><?= htmlspecialchars($request['sexe']) ?></td>
+                                <td><?= htmlspecialchars($request['age']) ?></td>
+                                <td><?= htmlspecialchars($request['duree']) ?></td>
+                                <td>
+                                    <button class="action-btn" data-id="<?= $request['id'] ?>" data-action="accept">Accepter</button>
+                                    <button class="action-btn" data-id="<?= $request['id'] ?>" data-action="reject">Refuser</button>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            <?php endif; ?>
+        </section>
+
+        <section>
+            <h2>Liste des adhérents</h2>
             <table>
                 <thead>
                     <tr>
@@ -29,58 +62,27 @@ $members = $pdo->query("SELECT * FROM adherents")->fetchAll(PDO::FETCH_ASSOC);
                         <th>Prénom</th>
                         <th>Sexe</th>
                         <th>Âge</th>
-                        <th>Durée (mois)</th>
-                        <th>Actions</th>
+                        <th>Date d'inscription</th>
+                        <th>Date d'expiration</th>
+                        <th>Gérer</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($requests as $request): ?>
+                    <?php foreach ($members as $member): ?>
                         <tr>
-                            <td><?= htmlspecialchars($request['nom']) ?></td>
-                            <td><?= htmlspecialchars($request['prenom']) ?></td>
-                            <td><?= htmlspecialchars($request['sexe']) ?></td>
-                            <td><?= htmlspecialchars($request['age']) ?></td>
-                            <td><?= htmlspecialchars($request['duree']) ?></td>
-                            <td>
-                                <button class="action-btn" data-id="<?= $request['id'] ?>" data-action="accept">Accepter</button>
-                                <button class="action-btn" data-id="<?= $request['id'] ?>" data-action="reject">Refuser</button>
-                            </td>
+                            <td><?= htmlspecialchars($member['nom']) ?></td>
+                            <td><?= htmlspecialchars($member['prenom']) ?></td>
+                            <td><?= htmlspecialchars($member['sexe']) ?></td>
+                            <td><?= htmlspecialchars($member['age']) ?></td>
+                            <td><?= htmlspecialchars($member['date_inscription']) ?></td>
+                            <td><?= htmlspecialchars($member['date_expiration']) ?></td>
+                            <td><a href="gerer_adherent.php?id=<?= $member['id'] ?>">Gérer</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-        <?php endif; ?>
-    </section>
-
-    <section>
-        <h2>Liste des adhérents</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Sexe</th>
-                    <th>Âge</th>
-                    <th>Date d'inscription</th>
-                    <th>Date d'expiration</th>
-                    <th>Gérer</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($members as $member): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($member['nom']) ?></td>
-                        <td><?= htmlspecialchars($member['prenom']) ?></td>
-                        <td><?= htmlspecialchars($member['sexe']) ?></td>
-                        <td><?= htmlspecialchars($member['age']) ?></td>
-                        <td><?= htmlspecialchars($member['date_inscription']) ?></td>
-                        <td><?= htmlspecialchars($member['date_expiration']) ?></td>
-                        <td><a href="gerer_adherent.php?id=<?= $member['id'] ?>">Gérer</a></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </section>
+        </section>
+    </main>
     <script src="js/scripts.js"></script>
 </body>
 </html>
