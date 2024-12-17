@@ -19,6 +19,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
     echo "<script>alert('Votre demande a été envoyée !');</script>";
 }
+
+$stmt = $pdo->query("SELECT COUNT(*) AS total FROM adherents");
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+$nombreAdherents = $result['total'];
+
+$stmtEvenements = $pdo->query("
+    SELECT id, nom_evenement, description, DATE_FORMAT(date_evenement, '%d/%m/%Y') AS date_formattee 
+    FROM evenements 
+    WHERE date_evenement >= CURDATE() 
+    ORDER BY date_evenement ASC
+");
+$evenements = $stmtEvenements->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <img src="images/book_icon.png" alt="Icon nombre d'inscrits" width="50px" height="auto">
                     <h3>Nombre d'inscrits :</h3>
                 </div>
-                <p id="nombre-stat">183</p>
+                <p id="nombre-stat"><?= htmlspecialchars($nombreAdherents) ?></p>
             </div>
         </section>
         <section id="a-propos">
@@ -78,25 +90,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <section id="evenements">
             <H2>Évènements</H2>
             <div class="conteneur-carrousel">
-                <div class="liste-diapos">
-                    <div class="diapo">
-                        <h3>Sauna !</h3>
-                        <p>Nous avons une grande nouveauté à vous annoncer à l’Union Sportive du Velay : l’arrivée de notre tout nouveau sauna dernière génération ! Cet espace bien-être vient enrichir vos séances en vous offrant un moment de relaxation et de récupération optimal. Après l’effort, détendez vos muscles, éliminez les toxines et profitez des nombreux bienfaits de la chaleur. Accessible à tous nos membres, le sauna est l’occasion idéale de prendre soin de vous, tout en boostant vos performances. N’attendez plus pour venir l’essayer et découvrir cette nouvelle expérience qui allie sport et bien-être au sein de votre salle USV !</p>
-                        <button>En savoir plus</button>
+                <?php if (!empty($evenements)): ?>
+                    <div class="liste-diapos">
+                        <?php foreach ($evenements as $evenement): ?>
+                            <div class="diapo">
+                                <h3><?= htmlspecialchars($evenement['nom_evenement']) ?></h3>
+                                <p><?= nl2br(htmlspecialchars($evenement['description'])) ?></p>
+                                <a href="detail_evenement.php?id=<?= htmlspecialchars($evenement['id']); ?>">
+                                    <button>En savoir plus</button>
+                                </a>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
-                    <div class="diapo">
-                        <h3>Tapis !</h3>
-                        <p>L’Union Sportive du Velay continue de se moderniser pour vous offrir le meilleur ! Nous sommes ravis de vous annoncer l’arrivée de nouveaux tapis de course dernière génération. Avec leurs fonctionnalités innovantes, comme des programmes d’entraînement personnalisés, des écrans interactifs, et un amorti renforcé pour protéger vos articulations, ces tapis sont parfaits pour repousser vos limites tout en prenant soin de votre corps. Que vous soyez adepte de la course, de la marche rapide ou des entraînements fractionnés, ces équipements s’adaptent à vos objectifs. Venez les découvrir dès aujourd’hui et profitez d’une expérience cardio unique dans votre salle USV !</p>
-                        <button>En savoir plus</button>
-                    </div>
-                    <div class="diapo">
-                        <h3>Troisième diapo</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque maiores tempore atque libero, adipisci ullam aut nisi itaque. Officiis reprehenderit provident molestias repudiandae in earum autem, error debitis illo nam.</p>
-                        <button>En savoir plus</button>
-                    </div>
-                </div>
-                <button class="bouton-carrousel precedent">&#10094;</button>
-                <button class="bouton-carrousel suivant">&#10095;</button>
+                    <button class="bouton-carrousel precedent">&#10094;</button>
+                    <button class="bouton-carrousel suivant">&#10095;</button>
+                <?php else: ?>
+                    <p>Aucun événement à venir pour le moment. Revenez bientôt pour découvrir nos prochaines activités !</p>
+                <?php endif; ?>
             </div>
             
         </section>
