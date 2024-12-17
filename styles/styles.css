@@ -101,22 +101,33 @@ main section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 main section h1 {
     font-weight: 900;
-    font-size: 9rem;
+    font-size: 158px;
     color: #000;
     margin: 0;
 }
 
 main section h3 {
-    font-size: 2rem;
+    font-size: 32px;
     font-weight: 400;
     color: #333;
+    margin-bottom: 0;
+    vertical-align: middle;
 }
+
 #statistiques{
+    align-items: center;
+    margin: 100px;
+}
+
+#cadre{
+    padding-bottom: -10px;
+    padding: 20px;
+    max-width: fit-content;
     border: solid;
     border-radius: 20px;
     display: flex;
@@ -124,8 +135,14 @@ main section h3 {
     align-items: center;
 }
 
-#statistiques div {
+#cadre div {
     display: flex;
+    gap: 20px;
+}
+
+#nombre-stat{
+    font-size: 70px;
+    margin: -15px;
 }
 
 #a-propos{
@@ -171,16 +188,16 @@ p{
 }
 
 .carousel-inner img {
-    object-fit: cover; /* Coupe et ajuste les images */
-    height: 100%; /* Prend toute la hauteur disponible */
+    object-fit: cover; 
+    height: 100%;
 }
 
 .carousel-caption {
-    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent pour le texte */
+    background: rgba(0, 0, 0, 0.6); 
     padding: 10px;
     border-radius: 10px;
     color: white;
-    text-align: left; /* Alignement du texte */
+    text-align: left; 
     bottom: 30px;
     left: 10%;
     width: 80%;
@@ -189,7 +206,7 @@ p{
 
 .carousel-caption h5 {
     font-size: 2rem;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     color: #fff;
 }
 
@@ -201,7 +218,7 @@ p{
 /* Boutons de navigation */
 .carousel-control-prev,
 .carousel-control-next {
-    filter: invert(100%); /* Rend les boutons blancs */
+    filter: invert(100%); 
 }
 
 .carousel-control-prev-icon,
@@ -212,15 +229,15 @@ p{
 
 /* Indicateurs du carrousel */
 .carousel-indicators [data-bs-target] {
-    background-color: #333; /* Points d'indication plus sombres */
+    background-color: #333; 
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    margin: 0 5px;
+    margin: 0 0px;
 }
 
 .carousel-indicators .active {
-    background-color: #000; /* Point actif en noir */
+    background-color: #000; 
 }
 
 
@@ -249,7 +266,7 @@ p{
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: 0 15px;
+    margin: 0 5px;
 }
 
 .element-formulaire-seul {
@@ -330,7 +347,7 @@ p{
 .google-note {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #1C274C;
+    color: black;
 }
 
 .google-note-container .star {

@@ -33,13 +33,15 @@
             </div>
             <img src="images/loic/velos.jpg" alt="Salle de vélos">
         </section>
-        <div id="statistiques">
-            <div>
-                <img src="images/book_icon.jpg" alt="Icon nombre d'inscrits" width="80px" height="auto">
-                <h3>Nombre d'inscrits</h3>
+        <section id="statistiques">
+            <div id="cadre">
+                <div>
+                    <img src="images/book_icon.png" alt="Icon nombre d'inscrits" width="50px" height="auto">
+                    <h3>Nombre d'inscrits :</h3>
+                </div>
+                <p id="nombre-stat">183</p>
             </div>
-            <p>183</p>
-        </div>
+        </section>
         <section id="a-propos">
             <img src="images/loic/interieur_bois.jpg" alt="Intérieur de la salle de sport">
             <div>
@@ -123,7 +125,7 @@
         
                 <!-- Étoile pleine -->
                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#1C274C" d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22l1.18-7.86-5-4.87 6.91-1.01L12 2z"/>
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22l1.18-7.86-5-4.87 6.91-1.01L12 2z"/>
                 </svg>
             </div>
             <div class="flex-row">
@@ -174,7 +176,7 @@
     </main>
     <!-- Footer de la page -->
     <footer>
-        <a href="https://www.facebook.com/unionsportiveduvelay/?locale=fr_FR"><img src="images/Icone_Facebook.jpg" alt="Page Facebook" width="100px" height="auto"></a>
+        <a href="https://www.facebook.com/unionsportiveduvelay/?locale=fr_FR"><img src="images/Icone_Facebook.png" alt="Page Facebook" width="100px" height="auto"></a>
         <ul>
             <li>Navigation</li>
             <li>Statistiques</li>
