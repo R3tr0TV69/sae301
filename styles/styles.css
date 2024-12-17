@@ -54,6 +54,15 @@ header ul li a:hover {
     background-color: #233D7A;
     color: #F7FBFD;
 }
+
+#profil-icon {
+    transition: all 0.25s ease;
+}
+#profil-icon:hover {
+    opacity: 75%;
+}
+
+
 section button {
     background-color: #C73E35;
     color: white;
@@ -113,11 +122,12 @@ main section h1 {
 }
 
 main section h3 {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 400;
     color: #333;
     margin-bottom: 0;
     vertical-align: middle;
+    text-align: right;
 }
 
 #statistiques{
@@ -269,7 +279,6 @@ form {
 .element-formulaire-seul {
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
     margin: 0 20px;
 }
 
@@ -284,9 +293,12 @@ form {
     transition: all 0.3s ease;
 }
 
-/* form button {
-    align-items: center;
-} */
+.button-container { 
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
 
 /* Avis */
 #avis {
@@ -381,10 +393,11 @@ footer ul li a {
     text-decoration: none;
     color: white;
     opacity: 70%;
+    transition: all 0.25s ease;
 }
 footer ul li a:hover{
     opacity: 100%;
-    transition: all 0.5s ease;
+    
 }
 footer div {
     display: flex;

@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <!-- Header de la page -->
     <header>
-        <a href="index.php"><img src="images/logo_remake.svg" alt="Logo USV" width="200px"></a>
+        <a href="index.php"><img src="<?= htmlspecialchars($site['logo']) ?>" alt="Logo USV" width="200px"></a>
         <ul>
             <li><a href="#statistiques">Stats</a></li>
             <li><a href="#a-propos">À propos</a></li>
@@ -40,14 +40,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <li><a href="#inscription">Inscription</a></li>
             <li><a href="#avis">Avis</a></li>
         </ul>
-        <a href="login.php"><img src="images/icon.png" alt="Se connecter" width="120px" height="120px"></a>
+        <a href="login.php"><img src="images/icon.png" alt="Se connecter" width="120px" height="120px" id="profil-icon"></a>
     </header>
     <!-- Contenu de la page -->
     <main>
         <section id="haut-de-page">
             <div id="txt-h-d-p">
-                <h1>USV</h1>
-                <h3>Union Sportive du Velay</h3>
+                <h1><?= htmlspecialchars($site['nom']) ?></h1>
+                <h3><strong>Horaires : </strong> <?= nl2br(htmlspecialchars($site['horaires'])) ?></h3>
                 <Button>INSCRIS-TOI !</Button>
             </div>
             <img src="images/loic/velos.jpg" alt="Salle de vélos">
@@ -122,7 +122,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <option value="12">12 mois</option>
                         </select></div>
                     <br>
-                    <button type="submit">Inscription</button>
+                    <div class="button-container">
+                        <button type="submit">Inscription</button>
+                    </div>
                 </form>
         </section>
         <section id="avis">
