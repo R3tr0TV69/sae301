@@ -15,6 +15,7 @@ $members = $pdo->query("SELECT * FROM adherents")->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="styles/styles-admin.css">
 </head>
 <body>
+    <?php include("includes/header_admin.php") ?>
     <h1>Admin Adhérents</h1>
     <section>
         <h2>Requêtes d'adhésion</h2>

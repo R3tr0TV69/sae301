@@ -51,6 +51,7 @@
     <link rel="stylesheet" href="styles/styles-admin.css">
 </head>
 <body>
+    <?php include("includes/header_admin.php") ?>
     <h1>Gérer l'Évènement</h1>
 
     <form method="POST">

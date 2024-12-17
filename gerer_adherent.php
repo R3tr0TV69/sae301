@@ -64,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="styles/styles-admin.css">
 </head>
 <body>
+    <?php include("includes/header_admin.php") ?>
     <h1>Gérer l'Adhérent</h1>
 
     <form method="POST">
