@@ -138,13 +138,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22l1.18-7.86-5-4.87 6.91-1.01L12 2z"/>
                 </svg>
             </div>
-            <div class="flex-row">
+            <div class="flex-avis">
                 <div class="avis-item">
                     <div class="avis-container">
                         <p class="avis-pseudo">Enzo Teyssonneyre</p>
                         <p class="avis-commentaire">Très bonne salle de sport, très bon sauna, ambiance familiale, musique possible dans la salle, multitude de machines.</p>
                         <div class="avis-stars">
-                            <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                             <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                             <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                             <svg class="star" viewBox="0 0 24 24"><path fill="#1C274C" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -187,7 +186,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Footer de la page -->
     <footer>
         <div>
-            <a href="https://www.facebook.com/unionsportiveduvelay/?locale=fr_FR"><img src="images/Icone_Facebook.png" alt="Page Facebook" width="200px" height="auto"></a>
+            <a href="https://www.facebook.com/unionsportiveduvelay/?locale=fr_FR"><img src="images/Icone_Facebook.png" alt="Page Facebook" id="facebook"></a>
             <ul>
                 <li>Navigation</li>
                 <li><a href="#statistiques">Statistiques</a></li>
@@ -197,7 +196,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <li><a href="#avis">Avis</a></li>
             </ul>
         </div>
-        <a href="index.php"><img src="images/logo_remake_white.svg" alt="Logo USV" width="300px" height="auto"></a>
+        <a href="index.php"><img src="images/logo_remake_white.svg" alt="Logo USV" id="logo-footer"></a>
     </footer>
     <script src="js/scripts.js"></script>
 </body>
