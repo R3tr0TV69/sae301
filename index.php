@@ -9,7 +9,7 @@
 <body>
     <!-- Header de la page -->
     <header>
-        <a href="index.html"><img src="images/logo_remake.svg" alt="Logo USV" width="200px"></a>
+        <a href="index.php"><img src="images/logo_remake.svg" alt="Logo USV" width="200px"></a>
         <ul>
             <li><a href="#statistiques">Stats</a></li>
             <li><a href="#a-propos">À propos</a></li>
@@ -57,13 +57,13 @@
             <div class="conteneur-carrousel">
                 <div class="liste-diapos">
                     <div class="diapo">
-                        <h3>Première diapo</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque maiores tempore atque libero, adipisci ullam aut nisi itaque. Officiis reprehenderit provident molestias repudiandae in earum autem, error debitis illo nam.</p>
+                        <h3>Sauna !</h3>
+                        <p>Nous avons une grande nouveauté à vous annoncer à l’Union Sportive du Velay : l’arrivée de notre tout nouveau sauna dernière génération ! Cet espace bien-être vient enrichir vos séances en vous offrant un moment de relaxation et de récupération optimal. Après l’effort, détendez vos muscles, éliminez les toxines et profitez des nombreux bienfaits de la chaleur. Accessible à tous nos membres, le sauna est l’occasion idéale de prendre soin de vous, tout en boostant vos performances. N’attendez plus pour venir l’essayer et découvrir cette nouvelle expérience qui allie sport et bien-être au sein de votre salle USV !</p>
                         <button>En savoir plus</button>
                     </div>
                     <div class="diapo">
-                        <h3>Deuxième diapo</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque maiores tempore atque libero, adipisci ullam aut nisi itaque. Officiis reprehenderit provident molestias repudiandae in earum autem, error debitis illo nam.</p>
+                        <h3>Tapis !</h3>
+                        <p>L’Union Sportive du Velay continue de se moderniser pour vous offrir le meilleur ! Nous sommes ravis de vous annoncer l’arrivée de nouveaux tapis de course dernière génération. Avec leurs fonctionnalités innovantes, comme des programmes d’entraînement personnalisés, des écrans interactifs, et un amorti renforcé pour protéger vos articulations, ces tapis sont parfaits pour repousser vos limites tout en prenant soin de votre corps. Que vous soyez adepte de la course, de la marche rapide ou des entraînements fractionnés, ces équipements s’adaptent à vos objectifs. Venez les découvrir dès aujourd’hui et profitez d’une expérience cardio unique dans votre salle USV !</p>
                         <button>En savoir plus</button>
                     </div>
                     <div class="diapo">
@@ -162,15 +162,18 @@
     </main>
     <!-- Footer de la page -->
     <footer>
-        <a href="https://www.facebook.com/unionsportiveduvelay/?locale=fr_FR"><img src="images/Icone_Facebook.png" alt="Page Facebook" width="100px" height="auto"></a>
-        <ul>
-            <li>Navigation</li>
-            <li>Statistiques</li>
-            <li>À propos</li>
-            <li>Évènements</li>
-            <li>Inscription</li>
-        </ul>
-        <a href="index.html"><img src="images/usv.jpeg" alt="Logo USV" width="120px" height="120px"></a>
+        <div>
+            <a href="https://www.facebook.com/unionsportiveduvelay/?locale=fr_FR"><img src="images/Icone_Facebook.png" alt="Page Facebook" width="200px" height="auto"></a>
+            <ul>
+                <li>Navigation</li>
+                <li><a href="#statistiques">Statistiques</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#evenements">Évènements</a></li>
+                <li><a href="#inscription">Inscription</a></li>
+                <li><a href="#avis">Avis</a></li>
+            </ul>
+        </div>
+        <a href="index.php"><img src="images/logo_remake_white.svg" alt="Logo USV" width="300px" height="auto"></a>
     </footer>
     <script src="js/scripts.js"></script>
 </body>
