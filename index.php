@@ -1,3 +1,26 @@
+<?php
+require_once 'config/config.php';
+
+$site = $pdo->query("SELECT * FROM gestion_site LIMIT 1")->fetch(PDO::FETCH_ASSOC);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $stmt = $pdo->prepare("
+        INSERT INTO demande_inscription (nom, prenom, sexe, age, poids, taille, duree)
+        VALUES (:nom, :prenom, :sexe, :age, :poids, :taille, :duree)
+    ");
+    $stmt->execute([
+        'nom' => $_POST['nom'],
+        'prenom' => $_POST['prenom'],
+        'sexe' => $_POST['sexe'],
+        'age' => intval($_POST['age']),
+        'poids' => floatval($_POST['poids']),
+        'taille' => floatval($_POST['taille']),
+        'duree' => intval($_POST['duree']),
+    ]);
+    echo "<script>alert('Votre demande a été envoyée !');</script>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -79,37 +102,36 @@
         </section>
         <section id="inscription">
             <h2>Inscris-toi !</h2>
-                <div class="ligne-formulaire">
-                    <div class="element-formulaire">Nom : <input type="text" placeholder="Nom" name="surname"></div>
-                    <div class="element-formulaire">Prénom : <input type="text" placeholder="Prénom" name="name"></div>
-                </div>
-                <div class="ligne-formulaire">
-                    <div class="element-formulaire">Sexe : <input type="text" placeholder="Sexe" name="sexe"></div>
-                    <div class="element-formulaire">Âge : <input type="text" placeholder="Âge" name="age"></div>
-                </div>
-                <div class="ligne-formulaire">
-                    <div class="element-formulaire">Poids : <input type="text" placeholder="Poids" name="poids"></div>
-                    <div class="element-formulaire">Taille : <input type="text" placeholder="Taille" name="taille"></div>
-                </div>
-                    <div class="element-formulaire-seul">Durée : <select name="duree" id="duree">
-                        <option value="1">1 mois</option>
-                        <option value="3">3 mois</option>
-                        <option value="6">6 mois</option>
-                        <option value="12">12 mois</option>
-                    </select></div>
-            <br>
-            <button>Inscription</button>
+                <form method="POST">
+                    <div class="ligne-formulaire">
+                        <div class="element-formulaire">Nom : <input type="text" placeholder="Nom" name="nom" id="nom"></div>
+                        <div class="element-formulaire">Prénom : <input type="text" placeholder="Prénom" name="prenom" id="prenom"></div>
+                    </div>
+                    <div class="ligne-formulaire">
+                        <div class="element-formulaire">Sexe : <select id="sexe" name="sexe"><option value="M">Homme</option><option value="F">Femme</option></select></div>
+                        <div class="element-formulaire">Âge : <input type="number" placeholder="Âge" name="age" min="1"></div>
+                    </div>
+                    <div class="ligne-formulaire">
+                        <div class="element-formulaire">Poids (en kg) : <input type="number" placeholder="Poids (en kg)" name="poids" step="0.1"></div>
+                        <div class="element-formulaire">Taille (en cm) : <input type="number" placeholder="Taille (en cm)" name="taille" step="0.1"></div>
+                    </div>
+                        <div class="element-formulaire-seul">Durée (en mois) : <select name="duree" id="duree">
+                            <option value="1">1 mois</option>
+                            <option value="3">3 mois</option>
+                            <option value="6">6 mois</option>
+                            <option value="12">12 mois</option>
+                        </select></div>
+                    <br>
+                    <button type="submit">Inscription</button>
+                </form>
         </section>
         <section id="avis">
             <h2>Avis</h2>
             <div class="google-note-container">
-                <!-- Icône Google -->
                 <img src="images/google_icon.svg" alt="google icone">
         
-                <!-- Note -->
-                <span class="google-note">4,6</span>
+                <span class="google-note">4,8</span>
         
-                <!-- Étoile pleine -->
                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22l1.18-7.86-5-4.87 6.91-1.01L12 2z"/>
                 </svg>

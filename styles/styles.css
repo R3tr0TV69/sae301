@@ -6,6 +6,10 @@
     font-family: "Poppins", sans-serif;
 }
 
+body {
+    scroll-behavior: smooth;
+}
+
 main{
     background-color: #F7FBFD;
 }
@@ -19,7 +23,6 @@ header {
     justify-content:space-around;
     align-items: center;
     z-index: 100;
-    /* pointer-events: none; */
 }
 
 header ul {
@@ -247,6 +250,10 @@ p{
     font-size: 24px;
 }
 
+form {
+    width: 100%;
+}
+
 .ligne-formulaire {
     display: flex;
     width: 100%;
@@ -260,12 +267,14 @@ p{
 }
 
 .element-formulaire-seul {
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    margin: 0 20px;
 }
 
 #inscription input, 
 #inscription select {
-    width: 100%;
     padding: 10px 15px;
     margin: 10px 0;
     font-size: 18px;
@@ -274,6 +283,10 @@ p{
     outline: none;
     transition: all 0.3s ease;
 }
+
+/* form button {
+    align-items: center;
+} */
 
 /* Avis */
 #avis {
