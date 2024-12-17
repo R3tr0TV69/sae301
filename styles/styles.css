@@ -410,6 +410,17 @@ footer div {
 #logo-footer{
     width: 300px;
 }
+.box-evenement {
+    background: lightgrey;
+    padding: 20px;
+    border-radius: 20px;
+    width: 50%;
+    margin: 40px auto;
+}
+.box-evenement h1 {
+    font-size: 38px;
+    text-align: center;
+}
 
 /* Media Query pour les tablettes */
 @media (max-width: 768px) {
