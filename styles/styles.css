@@ -19,7 +19,7 @@ header {
     justify-content:space-around;
     align-items: center;
     z-index: 100;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 header ul {
