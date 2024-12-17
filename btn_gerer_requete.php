@@ -1,5 +1,6 @@
 <?php
 require_once 'config/config.php';
+require_once 'config/verifier_session.php';
 
 if (!isset($_GET['action']) || !isset($_GET['id'])) {
     die('Action ou ID manquant');

@@ -1,5 +1,6 @@
 <?php
     require_once 'config/config.php';
+    require_once 'config/verifier_session.php';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare("
@@ -28,7 +29,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gérer les Événements</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles-admin.css">
 </head>
 <body>
     <h1>Gérer les Événements</h1>
