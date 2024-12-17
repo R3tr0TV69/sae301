@@ -43,17 +43,7 @@ $evenements = $stmtEvenements->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <!-- Header de la page -->
-    <header>
-        <a href="index.php"><img src="<?= htmlspecialchars($site['logo']) ?>" alt="Logo USV" width="200px"></a>
-        <ul>
-            <li><a href="#statistiques">Stats</a></li>
-            <li><a href="#a-propos">À propos</a></li>
-            <li><a href="#evenements">Évènements</a></li>
-            <li><a href="#inscription">Inscription</a></li>
-            <li><a href="#avis">Avis</a></li>
-        </ul>
-        <a href="login.php"><img src="images/icon.png" alt="Se connecter" width="120px" height="120px" id="profil-icon"></a>
-    </header>
+    <?php include("includes/header.php") ?>
     <!-- Contenu de la page -->
     <main>
         <section id="haut-de-page">
@@ -194,20 +184,7 @@ $evenements = $stmtEvenements->fetchAll(PDO::FETCH_ASSOC);
         </section>
     </main>
     <!-- Footer de la page -->
-    <footer>
-        <div>
-            <a href="https://www.facebook.com/unionsportiveduvelay/?locale=fr_FR"><img src="images/Icone_Facebook.png" alt="Page Facebook" id="facebook"></a>
-            <ul>
-                <li>Navigation</li>
-                <li><a href="#statistiques">Statistiques</a></li>
-                <li><a href="#a-propos">À propos</a></li>
-                <li><a href="#evenements">Évènements</a></li>
-                <li><a href="#inscription">Inscription</a></li>
-                <li><a href="#avis">Avis</a></li>
-            </ul>
-        </div>
-        <a href="index.php"><img src="images/logo_remake_white.svg" alt="Logo USV" id="logo-footer"></a>
-    </footer>
+    <?php include("includes/footer.php") ?>
     <script src="js/scripts.js"></script>
 </body>
 </html>
