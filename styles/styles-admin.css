@@ -171,6 +171,47 @@ h2 {
 }
 
 /* Tableaux */
+/* table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    text-align: left;
+    background-color: #f9f9f9;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #233d7a;
+    color: #f9f0d4;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #e1e8f0;
+}
+
+caption {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #233d7a;
+} */
+ /* Table responsive */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Tableau */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -205,6 +246,14 @@ caption {
     font-size: 1.2em;
     color: #233d7a;
 }
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 768px) {
+    th, td {
+        white-space: nowrap; /* Empêche les retours à la ligne */
+    }
+}
+
 
 /* Formulaires */
 
@@ -276,8 +325,33 @@ form button:hover {
     background-color: #a1201c;
 }
 
+/* Page login */
+
+body.login {
+    background-color: #233d7a;
+    color: white;
+    padding-top: 5em;
+}
+
+.login form {
+    margin: 30px auto;
+    width: 40%;
+}
+
+.login button {
+    background-color: white;
+    color: black;
+}
+
+.login button:hover {
+    background-color: rgb(209, 209, 209);
+}
+
+/* Responsive */
+
 @media (max-width: 768px) {
     form {
         width: 100%;
     }
+
 }

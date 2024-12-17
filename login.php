@@ -30,8 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion Admin</title>
+    <link rel="stylesheet" href="styles/styles-admin.css">
 </head>
-<body>
+<body class="login">
     <h1>Connexion Admin</h1>
     <form action="" method="POST">
         <input type="text" name="username" placeholder="Nom d'utilisateur" required><br>
