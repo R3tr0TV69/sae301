@@ -4,7 +4,8 @@ const diapos = document.querySelectorAll('.diapo');
 const boutonPrecedent = document.querySelector('.precedent');
 const boutonSuivant = document.querySelector('.suivant');
 let indexActuel = 0;
-const interval = 3000;
+const interval = 5000;
+
 function changerDiapo(direction) {
     indexActuel += direction;
     if (indexActuel < 0) {
@@ -14,27 +15,62 @@ function changerDiapo(direction) {
     }
     miseAJourCarrousel();
 }
+
 function miseAJourCarrousel() {
-    const largeur = -100 * indexActuel;
-    listeDiapos.style.transform = `translateX(${largeur}%)`;
+    if (listeDiapos) {
+        const largeur = -100 * indexActuel;
+        listeDiapos.style.transform = `translateX(${largeur}%)`;
+    }
 }
-boutonPrecedent.addEventListener('click', () => changerDiapo(-1));
-boutonSuivant.addEventListener('click', () => changerDiapo(1));
-setInterval(() => {
-    changerDiapo(1);
-}, interval);
+
+if (boutonPrecedent) {
+    boutonPrecedent.addEventListener('click', () => changerDiapo(-1));
+}
+if (boutonSuivant) {
+    boutonSuivant.addEventListener('click', () => changerDiapo(1));
+}
+
+if (listeDiapos) {
+    setInterval(() => {
+        changerDiapo(1);
+    }, interval);
+}
+
+
+
+
+
+
 
 // Header admin
 document.addEventListener('DOMContentLoaded', () => {
     const burgerMenu = document.querySelector('.burger-menu');
     const menuMobile = document.querySelector('.menu-mobile');
 
-    if (burgerMenu && menuMobile) {
-        burgerMenu.addEventListener('click', () => {
-            console.log("Burger cliqué"); // Test pour vérifier
-            menuMobile.classList.toggle('show');
+    burgerMenu.addEventListener('click', () => {
+        console.log("Burger cliqué"); // Debugging : Affiche un message dans la console
+        menuMobile.classList.toggle('show');
+        burgerMenu.classList.toggle('active'); // Pour l'animation du burger
+    });
+});
+
+
+
+
+
+
+
+
+
+
+// Boutons gérer requetes
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.action-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const id = this.dataset.id;
+            const action = this.dataset.action;
+            if (action === 'reject' && !confirm('Voulez-vous vraiment refuser cette demande ?')) return;
+            window.location.href = `btn_gerer_requete.php?action=${action}&id=${id}`;
         });
-    } else {
-        console.error("Éléments non trouvés : burgerMenu ou menuMobile.");
-    }
+    });
 });
