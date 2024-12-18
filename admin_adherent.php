@@ -24,7 +24,7 @@ $members = $pdo->query("SELECT * FROM adherents")->fetchAll(PDO::FETCH_ASSOC);
             <?php afficherRequetes::displayRequests($requests); ?>
         </section>
 
-        <section>
+        <!-- <section>
             <h2>Liste des adhérents</h2>
             <div class="search-bar">
         <input type="text" id="searchQuery" placeholder="Recherchez un adhérent par nom ou prénom...">
@@ -49,7 +49,33 @@ $members = $pdo->query("SELECT * FROM adherents")->fetchAll(PDO::FETCH_ASSOC);
                 </tbody>
             </table>
             </div>
+        </section> -->
+        <section>
+            <h2>Liste des adhérents</h2>
+            <div class="barre-recherche">
+                <input type="text" id="champRecherche" placeholder="Recherchez un adhérent par nom ou prénom..." oninput="chargerAdherents()">
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Sexe</th>
+                            <th>Âge</th>
+                            <th>Date d'inscription</th>
+                            <th>Date d'expiration</th>
+                            <th>Gérer</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listeAdherents">
+                        <!-- Les adhérents seront insérés ici -->
+                    </tbody>
+                </table>
+            </div>
         </section>
+
     </main>
     <script src="js/scripts.js"></script>
 </body>
