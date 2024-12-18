@@ -37,31 +37,17 @@ if (listeDiapos) {
 }
 
 
-
-
-
-
-
-// Header admin
+// Header
 document.addEventListener('DOMContentLoaded', () => {
     const burgerMenu = document.querySelector('.burger-menu');
     const menuMobile = document.querySelector('.menu-mobile');
 
     burgerMenu.addEventListener('click', () => {
-        console.log("Burger cliqué"); // Debugging : Affiche un message dans la console
+        console.log("Burger cliqué");
         menuMobile.classList.toggle('show');
-        burgerMenu.classList.toggle('active'); // Pour l'animation du burger
+        burgerMenu.classList.toggle('active');
     });
 });
-
-
-
-
-
-
-
-
-
 
 // Boutons gérer requetes
 document.addEventListener('DOMContentLoaded', function () {

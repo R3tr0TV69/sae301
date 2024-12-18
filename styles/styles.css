@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Medula+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
 }
 
-body {
+html {
     scroll-behavior: smooth;
-}
+  }
 
-main{
+main {
     background-color: #F7FBFD;
 }
 
@@ -58,6 +58,7 @@ header ul.nav-links li a:hover {
 #profil-icon {
     transition: all 0.25s ease;
 }
+
 #profil-icon:hover {
     opacity: 75%;
 }
@@ -140,6 +141,7 @@ transform: translateY(-9px) rotate(-45deg);
         display: none;
     }
 }
+
 @media (max-width: 1170px) {
     .nav-links, .connexion-link {
         display: none !important;
@@ -163,6 +165,7 @@ section button {
     border: none;
     border-radius: 8px;
     padding: 20px 30px;
+    margin-top: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -173,6 +176,7 @@ section button:hover {
     font-size: 40px;
     border-radius: 40px;
 }
+
 #haut-de-page{
     margin: 0;
     padding: 0;
@@ -183,6 +187,7 @@ section button:hover {
     gap: 10vw;
     overflow: hidden;
 }
+
 #haut-de-page img {
     width: 50vw;
     height: 100vh; 
@@ -191,12 +196,14 @@ section button:hover {
     border-bottom-left-radius: 180px; 
     opacity: 70%;
 }
+
 #txt-h-d-p{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 9px;
 }
+
 main section {
     margin: 0;
     padding: 0;
@@ -222,12 +229,12 @@ main section h3 {
     text-align: right;
 }
 
-#statistiques{
+#statistiques {
     align-items: center;
     margin: 100px;
 }
 
-#cadre{
+#cadre {
     padding-bottom: -10px;
     padding: 20px;
     max-width: fit-content;
@@ -248,7 +255,7 @@ main section h3 {
     margin: -15px;
 }
 
-#a-propos{
+#a-propos {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -269,22 +276,24 @@ main section h3 {
     border-top-right-radius: 180px; 
     border-bottom-right-radius: 180px; 
 }
-h2{
+
+h2 {
     font-size: 7vw;
     font-weight: 600;
     color: black;
     text-align: center;
 }
-p{
+
+p {
     font-size: 24px;
-    /* font-size: 1.25vw; */
 }
+
 #evenements {
     text-align: center;
     padding: 20px;
 }
 
-/*carrousel */
+/* Carrousel */
 .conteneur-carrousel {
     position: relative;
     width: 100%;
@@ -307,6 +316,11 @@ p{
     background-color: white;
     text-align: center;
     border-radius: 20px;
+}
+
+.diapo h3 {
+    font-size: 32px;
+    font-weight: 700;
 }
 
 .bouton-carrousel {
@@ -421,6 +435,7 @@ form {
 .avis-stars{
     text-align: center;
 }
+
 .avis-stars svg {
     width: 50px;
     height: auto;
@@ -439,6 +454,7 @@ form {
     flex-direction: row;
     gap: 15px;
 }
+
 .google-note-container {
     display: flex;
     flex-direction: row;
@@ -480,6 +496,7 @@ footer ul li {
     font-weight: 600;
     list-style-type:none
 }
+
 footer ul li a {
     font-weight: 400;
     text-decoration: none;
@@ -487,21 +504,25 @@ footer ul li a {
     opacity: 70%;
     transition: all 0.25s ease;
 }
+
 footer ul li a:hover{
     opacity: 100%;
-    
 }
+
 footer div {
     display: flex;
     align-items: center;
     gap: 10vw;
 }
+
 #facebook{
     width: 200px;
 }
+
 #logo-footer{
     width: 300px;
 }
+
 .box-evenement {
     background: lightgrey;
     padding: 20px;
@@ -509,12 +530,13 @@ footer div {
     width: 50%;
     margin: 180px auto 50px auto;
 }
+
 .box-evenement h1 {
     font-size: 38px;
     text-align: center;
 }
 
-/* Media Query pour les tablettes */
+/* Media query pour les tablettes */
 @media (max-width: 768px) {
     /* HERO */
     #haut-de-page{
@@ -621,9 +643,4 @@ footer div {
     #logo-footer{
         width: 150px;
     }
-}
-
-/* Media Query pour les mobiles */
-@media (max-width: 480px) {
-
 }

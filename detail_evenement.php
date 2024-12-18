@@ -37,7 +37,7 @@ if (!$evenement) {
             <p><strong>Heure :</strong></p> <p><?= htmlspecialchars($evenement['heure_evenement']) ?></p>
             <p><strong>Lieu :</strong></p> <p><?= htmlspecialchars($evenement['lieu']) ?></p>
             <p><strong>Capacité :</strong></p> <p><?= htmlspecialchars($evenement['capacite']) ?> personnes</p>
-            <a href="index.php">Retour</a>
+            <a href="index.php"><Button>RETOUR</Button></a>
         </div>
     </section>
     
