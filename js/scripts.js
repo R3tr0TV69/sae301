@@ -74,3 +74,51 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+
+
+
+
+// Fonction pour charger les adhérents
+async function searchAdherents() {
+    const query = document.getElementById('searchQuery').value; // Récupère la valeur de recherche
+
+    try {
+        // Appel à l'API PHP
+        const response = await fetch(`API/apiRecherche.php?query=${encodeURIComponent(query)}`);
+        const data = await response.json();
+
+        // Sélection de la table
+        const tableBody = document.getElementById('membersTable');
+        tableBody.innerHTML = ''; // Vide le contenu actuel de la table
+
+        if (data.length === 0) {
+            // Aucun résultat
+            tableBody.innerHTML = '<tr><td colspan="7">Aucun adhérent trouvé.</td></tr>';
+            return;
+        }
+
+        // Insère chaque ligne dans la table
+        data.forEach(member => {
+            const row = `
+                <tr>
+                    <td>${member.nom}</td>
+                    <td>${member.prenom}</td>
+                    <td>${member.sexe}</td>
+                    <td>${member.age}</td>
+                    <td>${member.date_inscription}</td>
+                    <td>${member.date_expiration}</td>
+                    <td><a href="gerer_adherent.php?id=${member.id}">Gérer</a></td>
+                </tr>
+            `;
+            tableBody.innerHTML += row;
+        });
+    } catch (error) {
+        console.error('Erreur lors du chargement des adhérents :', error);
+        document.getElementById('membersTable').innerHTML = '<tr><td colspan="7">Erreur de chargement.</td></tr>';
+    }
+}
+
+// Charger tous les adhérents au démarrage
+document.addEventListener('DOMContentLoaded', searchAdherents);
