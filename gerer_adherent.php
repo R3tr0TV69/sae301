@@ -1,7 +1,7 @@
 <?php
 require_once 'config/config.php';
 require_once 'config/verifier_session.php';
-require_once 'poo/classesIMC.php';
+require_once 'poo/AdherentIMC.php';
 
 if (!isset($_GET['id'])) {
     die("ID de l'adhérent manquant");
@@ -63,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="images/logo_remake_favicon.png">
     <title>Gérer l'Adhérent</title>
     <link rel="stylesheet" href="styles/styles-admin.css">
 </head>

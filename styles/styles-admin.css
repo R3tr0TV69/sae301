@@ -131,6 +131,15 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+.liensnav a img {
+    opacity: 1;
+    transition: 0.4s;
+}
+
+.liensnav a img:hover {
+    opacity: 0.75;
+}
+
 @media (min-width: 769px) {
     .burger-menu {
         display: none;
@@ -168,6 +177,13 @@ h1 {
 h2 {
     font-size: 28px;
     margin-top: 20px;
+}
+
+.action-btn {
+    background: none !important;
+    border: none !important;
+    margin: 0;
+    cursor: pointer;
 }
 
 /* Tableaux */

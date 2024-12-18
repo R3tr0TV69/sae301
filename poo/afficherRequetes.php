@@ -2,22 +2,6 @@
 
 $requests = $pdo->query("SELECT * FROM demande_inscription")->fetchAll(PDO::FETCH_ASSOC);
 
-class gererRequetes
-{
-    private $pdo;
-
-    public function __construct($pdo)
-    {
-        $this->pdo = $pdo;
-    }
-
-    public function getAllRequests()
-    {
-        $stmt = $this->pdo->query("SELECT * FROM demande_inscription");
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-}
-
 class afficherRequetes
 {
     public static function displayRequests($requests)
@@ -49,8 +33,8 @@ class afficherRequetes
                         <td>' . htmlspecialchars($request['age']) . '</td>
                         <td>' . htmlspecialchars($request['duree']) . '</td>
                         <td>
-                            <button class="action-btn" data-id="' . $request['id'] . '" data-action="accept">Accepter</button>
-                            <button class="action-btn" data-id="' . $request['id'] . '" data-action="reject">Refuser</button>
+                            <button class="action-btn" data-id="' . $request['id'] . '" data-action="accept"><img src="images/oui.png" alt="oui"></button>
+                            <button class="action-btn" data-id="' . $request['id'] . '" data-action="reject"><img src="images/non.png" alt="non"></button>
                         </td>
                     </tr>';
             }

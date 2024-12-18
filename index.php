@@ -40,7 +40,8 @@ $evenements = $stmtEvenements->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="styles/styles.css">
-    <title>Page d'accueil</title>
+    <link rel="icon" href="images/logo_remake_favicon.png">
+    <title>Bienvenue à l'USV au Puy-en-Velay !</title>
 </head>
 <body>
     <!-- Header de la page -->
@@ -106,18 +107,18 @@ $evenements = $stmtEvenements->fetchAll(PDO::FETCH_ASSOC);
             <h2>Inscris-toi !</h2>
                 <form method="POST">
                     <div class="ligne-formulaire">
-                        <div class="element-formulaire">Nom : <input type="text" placeholder="Nom" name="nom" id="nom" require></div>
-                        <div class="element-formulaire">Prénom : <input type="text" placeholder="Prénom" name="prenom" id="prenom" require></div>
+                        <div class="element-formulaire">Nom : <input type="text" placeholder="Nom" name="nom" id="nom" required="required"></div>
+                        <div class="element-formulaire">Prénom : <input type="text" placeholder="Prénom" name="prenom" id="prenom" required="required"></div>
                     </div>
                     <div class="ligne-formulaire">
-                        <div class="element-formulaire">Sexe : <select id="sexe" name="sexe" require><option value="M">Homme</option><option value="F">Femme</option></select></div>
-                        <div class="element-formulaire">Âge : <input type="number" placeholder="Âge" name="age" min="1" require></div>
+                        <div class="element-formulaire">Sexe : <select id="sexe" name="sexe" required="required"><option value="M">Homme</option><option value="F">Femme</option></select></div>
+                        <div class="element-formulaire">Âge : <input type="number" placeholder="Âge" name="age" min="1" required="required"></div>
                     </div>
                     <div class="ligne-formulaire">
-                        <div class="element-formulaire">Poids (en kg) : <input type="number" placeholder="Poids (en kg)" name="poids" step="0.1" require></div>
-                        <div class="element-formulaire">Taille (en cm) : <input type="number" placeholder="Taille (en cm)" name="taille" step="0.1" require></div>
+                        <div class="element-formulaire">Poids (en kg) : <input type="number" placeholder="Poids (en kg)" name="poids" step="0.1" required="required"></div>
+                        <div class="element-formulaire">Taille (en cm) : <input type="number" placeholder="Taille (en cm)" name="taille" step="0.1" required="required"></div>
                     </div>
-                        <div class="element-formulaire-seul">Durée (en mois) : <select name="duree" id="duree" require>
+                        <div class="element-formulaire-seul">Durée (en mois) : <select name="duree" id="duree" required="required">
                             <option value="1">1 mois</option>
                             <option value="3">3 mois</option>
                             <option value="6">6 mois</option>

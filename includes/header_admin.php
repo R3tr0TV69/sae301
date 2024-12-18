@@ -22,7 +22,7 @@
     </div>
 
     <div class="liensnav">
-        <a href="index.php">Retour au site</a>
-        <a href="config/logout.php">Déconnexion</a>
+        <a href="index.php"><img src="images/home.png" alt="retour au site" width="70px"></a>
+        <a href="config/logout.php"><img src="images/quit.png" alt="deconnexion" width="70px"></a>
     </div>
 </header>
