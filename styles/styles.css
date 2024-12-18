@@ -25,7 +25,7 @@ header {
     z-index: 100;
 }
 
-header ul {
+header ul.nav-links {
     display: flex;
     list-style: none;
     padding: 0;
@@ -37,7 +37,7 @@ header ul {
     border-radius: 40px;
 }
 
-header ul li a {
+header ul.nav-links li a {
     display: block;
     padding: 5px 40px;
     text-decoration: none;
@@ -50,7 +50,7 @@ header ul li a {
 
 }
 
-header ul li a:hover {
+header ul.nav-links li a:hover {
     background-color: #233D7A;
     color: #F7FBFD;
 }
@@ -62,6 +62,98 @@ header ul li a:hover {
     opacity: 75%;
 }
 
+/* Burger menu */
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.burger-menu span {
+    height: 3px;
+    width: 25px;
+    background-color: #000000;
+    margin: 3px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+.burger-menu.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+transform: translateY(-9px) rotate(-45deg);
+}.menu-mobile {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: #233d7a;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.menu-mobile.show {
+    display: block;
+}
+
+.menu-mobile ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-mobile ul li {
+    margin: 15px 0;
+}
+
+.menu-mobile ul li a {
+    color: #ffffff;
+    font-size: 1.2em;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 100px;
+    padding: 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.menu-mobile ul li a:hover {
+    background-color: #ffffff;
+    color: #233d7a;
+}
+
+@media (min-width: 1170px) {
+    .burger-menu {
+        display: none;
+    }
+    .menu-mobile {
+        display: none;
+    }
+}
+@media (max-width: 1170px) {
+    .nav-links, .connexion-link {
+        display: none !important;
+    }
+    .burger-menu {
+        display: flex;
+    }
+    .menu-mobile {
+        display: none;
+    }
+    .menu-mobile.show {
+        display: block;
+    }
+}
 
 section button {
     background-color: #C73E35;
