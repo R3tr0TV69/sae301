@@ -80,93 +80,61 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-// // Fonction pour charger les adhérents
-// async function searchAdherents() {
-//     const query = document.getElementById('searchQuery').value; // Récupère la valeur de recherche
+let listeAdherents = []; 
 
-//     try {
-//         // Appel à l'API PHP
-//         const response = await fetch(`API/apiRecherche.php?query=${encodeURIComponent(query)}`);
-//         const data = await response.json();
-
-//         // Sélection de la table
-//         const tableBody = document.getElementById('membersTable');
-//         tableBody.innerHTML = ''; // Vide le contenu actuel de la table
-
-//         if (data.length === 0) {
-//             // Aucun résultat
-//             tableBody.innerHTML = '<tr><td colspan="7">Aucun adhérent trouvé.</td></tr>';
-//             return;
-//         }
-
-//         // Insère chaque ligne dans la table
-//         data.forEach(member => {
-//             const row = `
-//                 <tr>
-//                     <td>${member.nom}</td>
-//                     <td>${member.prenom}</td>
-//                     <td>${member.sexe}</td>
-//                     <td>${member.age}</td>
-//                     <td>${member.date_inscription}</td>
-//                     <td>${member.date_expiration}</td>
-//                     <td><a href="gerer_adherent.php?id=${member.id}">Gérer</a></td>
-//                 </tr>
-//             `;
-//             tableBody.innerHTML += row;
-//         });
-//     } catch (error) {
-//         console.error('Erreur lors du chargement des adhérents :', error);
-//         document.getElementById('membersTable').innerHTML = '<tr><td colspan="7">Erreur de chargement.</td></tr>';
-//     }
-// }
-
-// // Charger tous les adhérents au démarrage
-// document.addEventListener('DOMContentLoaded', searchAdherents);
-
-let delaiRecherche; // Variable pour gérer le délai avant envoi
-
-// Fonction pour charger les adhérents
-async function chargerAdherents() {
-    clearTimeout(delaiRecherche); // Annule le délai précédent
-    delaiRecherche = setTimeout(async () => {
-        const recherche = document.getElementById('champRecherche').value.trim(); // Valeur du champ de recherche
-
-        try {
-            // Appel à l'API PHP
-            const reponse = await fetch(`API/apiRecherche.php?query=${encodeURIComponent(recherche)}`);
-            const adherents = await reponse.json();
-
-            // Sélection du tableau
-            const tableauAdherents = document.getElementById('listeAdherents');
-            tableauAdherents.innerHTML = ''; // Vide le contenu actuel du tableau
-
-            if (adherents.length === 0) {
-                // Aucun résultat trouvé
-                tableauAdherents.innerHTML = '<tr><td colspan="7">Aucun adhérent trouvé.</td></tr>';
-                return;
-            }
-
-            // Remplit le tableau avec les résultats
-            adherents.forEach(adherent => {
-                const ligne = `
-                    <tr>
-                        <td>${adherent.nom}</td>
-                        <td>${adherent.prenom}</td>
-                        <td>${adherent.sexe}</td>
-                        <td>${adherent.age}</td>
-                        <td>${adherent.date_inscription}</td>
-                        <td>${adherent.date_expiration}</td>
-                        <td><a href="gerer_adherent.php?id=${adherent.id}">Gérer</a></td>
-                    </tr>
-                `;
-                tableauAdherents.innerHTML += ligne;
-            });
-        } catch (erreur) {
-            console.error('Erreur lors du chargement des adhérents :', erreur);
-            document.getElementById('listeAdherents').innerHTML = '<tr><td colspan="7">Erreur de chargement.</td></tr>';
-        }
-    }, 300); // Délai de 300 ms pour limiter les requêtes
+function chargerAdherents() {
+    fetch("API/apiRecherche.php") 
+        .then(response => {
+            return response.json(); 
+        })
+        .then(data => {
+            listeAdherents = data; 
+            afficherAdherents(listeAdherents); 
+        })
+        .catch(erreur => {
+            console.error(erreur);
+            document.getElementById("listeAdherents").innerHTML = "<tr><td colspan='7'>Erreur de chargement.</td></tr>";
+        });
 }
 
-// Charger tous les adhérents au chargement de la page
+function afficherAdherents(liste) {
+    const tableau = document.getElementById("listeAdherents");
+    tableau.innerHTML = "";
+
+    if (liste.length === 0) {
+        tableau.innerHTML = "<tr><td colspan='7'>Aucun adhérent trouvé.</td></tr>";
+        return;
+    }
+
+    liste.forEach(adherent => {
+        tableau.innerHTML += `
+            <tr>
+                <td>${adherent.nom}</td>
+                <td>${adherent.prenom}</td>
+                <td>${adherent.sexe}</td>
+                <td>${adherent.age}</td>
+                <td>${adherent.date_inscription}</td>
+                <td>${adherent.date_expiration}</td>
+                <td><a href="gerer_adherent.php?id=${adherent.id}">Gérer</a></td>
+            </tr>
+        `;
+    });
+}
+
+function filtrerAdherents() {
+    const recherche = document.getElementById("champRecherche").value.toLowerCase().trim();
+
+    const resultatsFiltres = listeAdherents.filter(adherent =>
+        adherent.nom.toLowerCase().includes(recherche) ||
+        adherent.prenom.toLowerCase().includes(recherche)
+    );
+
+    afficherAdherents(resultatsFiltres);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    chargerAdherents(); 
+    document.getElementById("champRecherche").addEventListener("input", filtrerAdherents);
+});
+
 document.addEventListener('DOMContentLoaded', chargerAdherents);

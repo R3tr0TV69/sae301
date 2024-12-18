@@ -23,15 +23,15 @@ $members = $pdo->query("SELECT * FROM adherents")->fetchAll(PDO::FETCH_ASSOC);
             <h2>Requêtes d'adhésion</h2>
             <?php afficherRequetes::displayRequests($requests); ?>
         </section>
+        
+        <section>
+        <h2>Liste des Adhérents</h2>
 
-        <!-- <section>
-            <h2>Liste des adhérents</h2>
-            <div class="search-bar">
-        <input type="text" id="searchQuery" placeholder="Recherchez un adhérent par nom ou prénom...">
-        <button onclick="searchAdherents()">Rechercher</button>
+        <div>
+            <input type="text" id="champRecherche" placeholder="Recherchez par nom ou prénom...">
         </div>
 
-            <div class="table-responsive">
+        <div class="table-responsive">
             <table>
                 <thead>
                     <tr>
@@ -44,37 +44,12 @@ $members = $pdo->query("SELECT * FROM adherents")->fetchAll(PDO::FETCH_ASSOC);
                         <th>Gérer</th>
                     </tr>
                 </thead>
-                <tbody id="membersTable">
-                    
+                <tbody id="listeAdherents">
                 </tbody>
             </table>
-            </div>
-        </section> -->
-        <section>
-            <h2>Liste des adhérents</h2>
-            <div class="barre-recherche">
-                <input type="text" id="champRecherche" placeholder="Recherchez un adhérent par nom ou prénom..." oninput="chargerAdherents()">
-            </div>
+        </div>
+    </section>
 
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nom</th>
-                            <th>Prénom</th>
-                            <th>Sexe</th>
-                            <th>Âge</th>
-                            <th>Date d'inscription</th>
-                            <th>Date d'expiration</th>
-                            <th>Gérer</th>
-                        </tr>
-                    </thead>
-                    <tbody id="listeAdherents">
-                        <!-- Les adhérents seront insérés ici -->
-                    </tbody>
-                </table>
-            </div>
-        </section>
 
     </main>
     <script src="js/scripts.js"></script>
