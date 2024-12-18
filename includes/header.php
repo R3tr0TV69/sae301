@@ -22,5 +22,5 @@
             <li><a href="login.php">Se connecter</a></li>
         </ul>
     </div>
-    <a class="connexion-link" href="login.php"><img src="images/icon.png" alt="Se connecter" width="70px" height="70px" id="profil-icon"></a>
+    <a class="connexion-link" href="login.php"><img src="images/icon.png" alt="Se connecter" width="120px" height="120px" id="profil-icon"></a>
 </header>
