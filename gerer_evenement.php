@@ -55,8 +55,9 @@
 <body>
     <?php include("includes/header_admin.php") ?>
     <main> 
-        <h1>Gérer l'Évènement</h1>
-
+        <h1>Gérer l'Événement</h1>
+        
+        <!-- Formulaire pour modifier un événement -->
         <form method="POST">
             <label for="nom_evenement">Nom de l'événement :</label>
             <input type="text" name="nom_evenement" id="nom_evenement" value="<?= htmlspecialchars($event['nom_evenement']) ?>" required><br>
@@ -79,6 +80,7 @@
             <button type="submit" name="update">Mettre à jour</button>
         </form>
 
+        <!-- Pour supprimer un événement -->
         <form method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cet événement ?');">
             <button type="submit" name="delete">Supprimer l'Événement</button>
         </form>

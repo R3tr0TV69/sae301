@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php include("includes/header_admin.php"); ?>
     <main>
         <h1>Gérer l'Adhérent</h1>
-
+        <!-- Formulaire pour éditer les informations d'un adhérent -->
         <form method="POST">
             <label for="nom">Nom :</label>
             <input type="text" name="nom" id="nom" value="<?= htmlspecialchars($member['nom']) ?>" required><br>
@@ -100,6 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit" name="update">Mettre à jour</button>
         </form>
 
+        <!-- Formulaire pour prolonger la durée de l'abonnement -->
         <form method="POST">
             <label for="extension">Prolonger la durée :</label>
             <select name="extension" id="extension" required>
@@ -115,6 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button class="btnsupprimer" type="submit" name="delete">Supprimer l'adhérent</button>
         </form>
 
+        <!-- Calcule et affiche l'IMC -->
         <h2>IMC</h2>
         <?php AdherentIMC::afficherIMC($pdo, $id); ?>
     </main>

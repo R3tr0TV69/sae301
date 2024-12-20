@@ -1,4 +1,5 @@
 <?php
+// Connexion à la base de donnée hébergé sur Hostinger
 $host = 'srv935.hstgr.io';
 $port = '3306';
 $dbname = 'u737121608_usv';

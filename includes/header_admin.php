@@ -1,3 +1,4 @@
+<!-- Header admin -->
 <header>
     <div class="burger-menu">
         <span></span>
@@ -8,7 +9,7 @@
     <nav>
         <ul class="nav-links">
             <li><a href="admin_adherent.php">Liste adhérents</a></li>
-            <li><a href="admin_evenement.php">Évènements</a></li>
+            <li><a href="admin_evenement.php">Événements</a></li>
             <li><a href="gerer_site.php">Gérer le site</a></li>
         </ul>
     </nav>
@@ -16,7 +17,7 @@
     <div class="menu-mobile">
         <ul>
             <li><a href="admin_adherent.php">Liste adhérents</a></li>
-            <li><a href="admin_evenement.php">Évènements</a></li>
+            <li><a href="admin_evenement.php">Événements</a></li>
             <li><a href="gerer_site.php">Gérer le site</a></li>
         </ul>
     </div>

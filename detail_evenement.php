@@ -1,5 +1,6 @@
 <?php
 require_once 'config/config.php';
+require_once 'config/verifier_session.php';
 
 $site = $pdo->query("SELECT * FROM gestion_site LIMIT 1")->fetch(PDO::FETCH_ASSOC);
 
@@ -32,6 +33,7 @@ if (!$evenement) {
 
     <section>
         <div class="box-evenement">
+            <!-- Affiche le détail de chaque événement -->
             <h1><?= htmlspecialchars($evenement['nom_evenement']) ?></h1>
             <p><strong>Description :</strong></p> <p><?= nl2br(htmlspecialchars($evenement['description'])) ?></p>
             <p><strong>Date :</strong></p> <p><?= htmlspecialchars($evenement['date_evenement']) ?></p>

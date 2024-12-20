@@ -1,5 +1,5 @@
 <?php
-
+// Affiche l'ensemble des requêtes de demande d'inscription
 $requests = $pdo->query("SELECT * FROM demande_inscription")->fetchAll(PDO::FETCH_ASSOC);
 
 class afficherRequetes

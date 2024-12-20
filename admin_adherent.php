@@ -22,36 +22,37 @@ $members = $pdo->query("SELECT * FROM adherents")->fetchAll(PDO::FETCH_ASSOC);
     <main>
         <h1>Admin Adhérents</h1>
         <section>
+            <!-- Affiche les nouvelles demande pour intégrer la salle -->
             <h2>Requêtes d'adhésion</h2>
             <?php afficherRequetes::displayRequests($requests); ?>
         </section>
         
         <section>
-        <h2>Liste des Adhérents</h2>
+            <!-- Liste les adhérents actuels -->
+            <h2>Liste des Adhérents</h2>
 
-        <div>
-            <input type="text" id="champRecherche" placeholder="Recherchez par nom ou prénom...">
-        </div>
+            <div>
+                <input type="text" id="champRecherche" placeholder="Recherchez par nom ou prénom...">
+            </div>
 
-        <div class="table-responsive">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Prénom</th>
-                        <th>Sexe</th>
-                        <th>Âge</th>
-                        <th>Date d'inscription</th>
-                        <th>Date d'expiration</th>
-                        <th>Gérer</th>
-                    </tr>
-                </thead>
-                <tbody id="listeAdherents">
-                </tbody>
-            </table>
-        </div>
-    </section>
-
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Sexe</th>
+                            <th>Âge</th>
+                            <th>Date d'inscription</th>
+                            <th>Date d'expiration</th>
+                            <th>Gérer</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listeAdherents">
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
     </main>
     <script src="js/scripts.js"></script>

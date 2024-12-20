@@ -227,13 +227,11 @@ caption {
     color: #233d7a;
 }
 
-/* Adaptation pour les petits écrans */
 @media (max-width: 768px) {
     th, td {
         white-space: nowrap;
     }
 }
-
 
 /* Formulaires */
 form {
@@ -304,6 +302,12 @@ form button:hover {
     background-color: #a1201c;
 }
 
+@media (max-width: 768px) {
+    form {
+        width: 100%;
+    }
+}
+
 /* Page login */
 body.login {
     background-color: #233d7a;
@@ -323,11 +327,4 @@ body.login {
 
 .login button:hover {
     background-color: rgb(209, 209, 209);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    form {
-        width: 100%;
-    }
 }

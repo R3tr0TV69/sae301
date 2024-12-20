@@ -1,4 +1,5 @@
 <?php
+// Calcul de l'IMC pour les adhérents
 require_once 'config/config.php';
 
 class AdherentIMC

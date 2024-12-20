@@ -44,7 +44,6 @@ $evenements = $stmtEvenements->fetchAll(PDO::FETCH_ASSOC);
     <title>Bienvenue à l'USV au Puy-en-Velay !</title>
 </head>
 <body>
-    <!-- Header de la page -->
     <?php include("includes/header.php") ?>
     <!-- Contenu de la page -->
     <main>
@@ -80,7 +79,8 @@ $evenements = $stmtEvenements->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </section>
         <section id="evenements">
-            <H2>Évènements</H2>
+            <H2>Événements</H2>
+            <!-- Carrousel avec les événements à venir -->
             <div class="conteneur-carrousel">
                 <?php if (!empty($evenements)): ?>
                     <div class="liste-diapos">
@@ -105,6 +105,7 @@ $evenements = $stmtEvenements->fetchAll(PDO::FETCH_ASSOC);
         </section>
         <section id="inscription">
             <h2>Inscris-toi !</h2>
+                <!-- Formulaire d'inscription à la salle -->
                 <form method="POST">
                     <div class="ligne-formulaire">
                         <div class="element-formulaire">Nom : <input type="text" placeholder="Nom" name="nom" id="nom" required="required"></div>
@@ -131,6 +132,7 @@ $evenements = $stmtEvenements->fetchAll(PDO::FETCH_ASSOC);
                 </form>
         </section>
         <section id="avis">
+            <!--  Quelques avis de la salle -->
             <h2>Avis</h2>
             <div class="google-note-container">
                 <img src="images/google_icon.svg" alt="google icone">
@@ -186,7 +188,6 @@ $evenements = $stmtEvenements->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </section>
     </main>
-    <!-- Footer de la page -->
     <?php include("includes/footer.php") ?>
     <script src="js/scripts.js"></script>
 </body>

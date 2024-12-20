@@ -36,11 +36,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body class="login">
     <h1>Connexion Admin</h1>
+    <!-- Système de connexion -->
     <form action="" method="POST">
         <input type="text" name="username" placeholder="Nom d'utilisateur" required><br>
         <input type="password" name="password" placeholder="Mot de passe" required><br>
         <button type="submit">Se connecter</button>
         <br>
+        <!-- A enlever mais simplement pour vous donner les infos de connexion -->
         <p><strong>Identifiant : </strong>admin</p>
         <p><strong>Mot de passe : </strong>admin</p>
     </form>

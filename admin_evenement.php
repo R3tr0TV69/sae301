@@ -38,6 +38,7 @@
     <main>
         <h1>Gérer les Événements</h1>
 
+        <!-- F>ormulaire pour ajouter un événement -->
         <h2>Ajouter un Événement</h2>
         <form method="POST">
             <label>Nom :</label>
@@ -62,6 +63,7 @@
         </form>
 
         <h2>Événements disponibles</h2>
+        <!-- Liste les événements existants -->
         <?php if (empty($events)): ?>
             <p>Aucun événement disponible.</p>
         <?php else: ?>

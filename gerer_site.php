@@ -48,12 +48,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h1>Gérer le Site</h1>
 
         <form method="POST" enctype="multipart/form-data">
+            <!-- Permet de gérer le nom du site -->
             <label for="nom">Nom du site :</label>
             <input type="text" name="nom" id="nom" value="<?= htmlspecialchars($site['nom']) ?>" required><br>
 
+            <!-- Permet de gérer les horaires du site -->
             <label for="horaires">Horaires :</label>
             <textarea name="horaires" id="horaires" rows="4" required><?= htmlspecialchars($site['horaires']) ?></textarea><br>
 
+            <!-- Permet de gérer le logo du site -->
             <label for="logo">Logo :</label>
             <input type="file" name="logo" id="logo"><br>
             <?php if (!empty($site['logo'])): ?>

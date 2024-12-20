@@ -36,8 +36,7 @@ if (listeDiapos) {
     }, interval);
 }
 
-
-// Header
+// Headers
 document.addEventListener('DOMContentLoaded', () => {
     const burgerMenu = document.querySelector('.burger-menu');
     const menuMobile = document.querySelector('.menu-mobile');
@@ -61,11 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
-
-
-
+// Recherche des adhérents
 let listeAdherents = []; 
 
 function chargerAdherents() {

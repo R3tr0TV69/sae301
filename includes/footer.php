@@ -1,3 +1,4 @@
+<!-- Footer -->
 <footer>
     <div>
         <a href="https://www.facebook.com/unionsportiveduvelay/?locale=fr_FR"><img src="images/Icone_Facebook.png" alt="Page Facebook" id="facebook"></a>
@@ -5,7 +6,7 @@
             <li>Navigation</li>
             <li><a href="index.php">Accueil</a></li>
             <li><a href="index.php#a-propos">À propos</a></li>
-            <li><a href="index.php#evenements">Évènements</a></li>
+            <li><a href="index.php#evenements">Événements</a></li>
             <li><a href="index.php#inscription">Inscription</a></li>
             <li><a href="index.php#avis">Avis</a></li>
         </ul>

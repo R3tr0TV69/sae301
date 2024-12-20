@@ -1,5 +1,5 @@
 <?php
-
+// Gére les inscriptions
 $requests = $pdo->query("SELECT * FROM demande_inscription")->fetchAll(PDO::FETCH_ASSOC);
 
 class gererRequetes
